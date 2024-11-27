@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="75sp"
+        android:textSize="85sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,8 +24,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"/>
 
-    <!-- Profile Button (Circular with border) -->
-    <androidx.appcompat.widget.AppCompatImageView
+    <!-- Profile Button -->
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/profileButton"
         android:layout_width="140dp"
         android:layout_height="140dp"
@@ -34,11 +34,12 @@
         android:layout_marginTop="176dp"
         android:layout_marginStart="30dp"
         android:scaleType="centerInside"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- Settings Button (Circular with border) -->
-    <androidx.appcompat.widget.AppCompatImageView
+    <!-- Settings Button -->
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/settingsButton"
         android:layout_width="140dp"
         android:layout_height="140dp"
@@ -47,11 +48,12 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="30dp"
         android:scaleType="centerInside"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Start Workout Button (Circular with border) -->
-    <androidx.appcompat.widget.AppCompatImageView
+    <!-- Start Workout Button -->
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/startWorkoutButton"
         android:layout_width="140dp"
         android:layout_height="140dp"
@@ -60,11 +62,12 @@
         android:layout_marginBottom="176dp"
         android:layout_marginStart="30dp"
         android:scaleType="centerInside"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- Achievements Button (Circular with border) -->
-    <androidx.appcompat.widget.AppCompatImageView
+    <!-- Achievements Button -->
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/achievementsButton"
         android:layout_width="140dp"
         android:layout_height="140dp"
@@ -73,6 +76,7 @@
         android:layout_marginBottom="136dp"
         android:layout_marginEnd="30dp"
         android:scaleType="centerInside"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

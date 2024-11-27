@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Set up the toolbar
+        // Set up the top menu bar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case android.R.id.home:
-//                // Handle back button click
-//                onBackPressed();
-//                return true;
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // Handle back button click (use the new back method)
+                getOnBackPressedDispatcher().onBackPressed();  // This will go back to the previous activity
+                return true;
 //            case R.id.action_home:
 //                // Handle home button click
 //                Toast.makeText(this, "Home clicked", Toast.LENGTH_SHORT).show();
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
 //                // Handle settings button click
 //                Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show();
 //                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
