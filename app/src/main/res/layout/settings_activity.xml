@@ -40,10 +40,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingStart="36dp"
-        android:paddingEnd="36dp"
+        android:paddingTop="10dp"
+        android:paddingStart="33dp"
+        android:paddingEnd="12dp"
         android:layout_marginBottom="10dp">
         <Button
             android:id="@+id/account_information"
@@ -51,8 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Account Information"
-            android:textSize="25sp"
-            android:textColor="#00796b"
+            android:textSize="28sp"
+            android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
         <Button
@@ -63,7 +63,7 @@
             android:text="\u203A"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#00796b"
+            android:textColor="@color/black"
             android:paddingStart="8dp"/>
     </LinearLayout>
 
@@ -73,10 +73,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingStart="36dp"
-        android:paddingEnd="36dp"
+        android:paddingTop="5dp"
+        android:paddingStart="33dp"
+        android:paddingEnd="12dp"
         android:layout_marginBottom="10dp">
         <Button
             android:id="@+id/profile"
@@ -84,8 +84,8 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Profile"
-            android:textSize="25sp"
-            android:textColor="#00796b"
+            android:textSize="28sp"
+            android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
         <Button
@@ -96,7 +96,7 @@
             android:text="\u203A"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#00796b"
+            android:textColor="@color/black"
             android:paddingStart="8dp"/>
     </LinearLayout>
 
@@ -106,10 +106,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingStart="36dp"
-        android:paddingEnd="36dp"
+        android:paddingTop="5dp"
+        android:paddingStart="33dp"
+        android:paddingEnd="12dp"
         android:layout_marginBottom="10dp">
         <Button
             android:id="@+id/running_history"
@@ -117,8 +117,8 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Running History"
-            android:textSize="25sp"
-            android:textColor="#00796b"
+            android:textSize="28sp"
+            android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
         <Button
@@ -129,7 +129,7 @@
             android:text="\u203A"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#00796b"
+            android:textColor="@color/black"
             android:paddingStart="8dp"/>
     </LinearLayout>
 
@@ -139,9 +139,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:paddingStart="36dp"
-        android:paddingEnd="36dp"
+        android:paddingTop="5dp"
+        android:paddingStart="33dp"
+        android:paddingEnd="12dp"
         android:background="?android:attr/selectableItemBackground"
         android:layout_marginBottom="10dp">
         <Button
@@ -150,8 +150,8 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="Calibration"
-            android:textSize="25sp"
-            android:textColor="#00796b"
+            android:textSize="28sp"
+            android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
         <Button
@@ -162,7 +162,7 @@
             android:text="\u203A"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#00796b"
+            android:textColor="@color/black"
             android:paddingStart="8dp"/>
     </LinearLayout>
 

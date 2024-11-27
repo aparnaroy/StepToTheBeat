@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Title at the top -->
+    <!-- Page Title in Menu Bar -->
     <TextView
         android:id="@+id/titleProfile"
         android:layout_width="wrap_content"
@@ -90,9 +90,9 @@
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:text="Favorite Playlists \u203A"
-            android:textSize="25sp"
+            android:textSize="28sp"
             android:padding="15dp"
-            android:textColor="#00796b"/>
+            android:textColor="@color/black"/>
 
         <!-- Past Workouts -->
         <Button
@@ -101,9 +101,9 @@
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:text="Past Workouts \u203A"
-            android:textSize="25sp"
+            android:textSize="28sp"
             android:padding="15dp"
-            android:textColor="#00796b"/>
+            android:textColor="@color/black"/>
 
         <!-- Personal Goals -->
         <Button
@@ -112,9 +112,9 @@
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:text="Personal Goals \u203A"
-            android:textSize="25sp"
+            android:textSize="28sp"
             android:padding="15dp"
-            android:textColor="#00796b"/>
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 

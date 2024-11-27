@@ -52,11 +52,11 @@ public class SettingsActivity extends BaseActivity {
 //            Intent intent = new Intent(SettingsActivity.this, RunningHistoryActivity.class);
 //            startActivity(intent);
 //        });
-//
-//        calibrationButton.setOnClickListener(v -> {
-//            // Navigate to Calibration Activity
-//            Intent intent = new Intent(SettingsActivity.this, CalibrationActivity.class);
-//            startActivity(intent);
-//        });
+
+        calibrationButton.setOnClickListener(v -> {
+            // Navigate to Calibration Activity
+            Intent intent = new Intent(SettingsActivity.this, CalibrationActivity.class);
+            startActivity(intent);
+        });
     }
 }
