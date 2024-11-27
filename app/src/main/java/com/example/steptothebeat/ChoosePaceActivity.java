@@ -22,14 +22,38 @@ public class ChoosePaceActivity extends BaseActivity {
         LinearLayout runButton = findViewById(R.id.run_button);
         LinearLayout sprintButton = findViewById(R.id.sprint_button);
 
-//        walkButton.setOnClickListener(v -> {
-//            // Navigate to Start Activity Activity
-//            Intent intent = new Intent(ChoosePaceActivity.this, StartWorkoutActivity.class);
-//            startActivity(intent);
-//        });
+        // Walk Button
         walkButton.setOnClickListener(v -> {
-            // Navigate to Start Activity Activity
-            Intent intent = new Intent(ChoosePaceActivity.this, HomeActivity.class);
+            Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
+            intent.putExtra("pace", "Walk");
+            startActivity(intent);
+        });
+
+        // Power Walk Button
+        powerWalkButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
+            intent.putExtra("pace", "Power Walk"); // Passing data
+            startActivity(intent);
+        });
+
+        // Jog Button
+        jogButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
+            intent.putExtra("pace", "Jog"); // Passing data
+            startActivity(intent);
+        });
+
+        // Run Button
+        runButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
+            intent.putExtra("pace", "Run"); // Passing data
+            startActivity(intent);
+        });
+
+        // Sprint Button
+        sprintButton.setOnClickListener(v -> {
+            Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
+            intent.putExtra("pace", "Sprint"); // Passing data
             startActivity(intent);
         });
     }

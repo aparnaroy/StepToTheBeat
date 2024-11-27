@@ -56,5 +56,14 @@
             </intent-filter>
         </activity>
 
+        <!-- Select Genre Page -->
+        <activity
+            android:name=".SelectGenreActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
