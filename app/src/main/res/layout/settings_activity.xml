@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    android:id="@+id/settings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -20,65 +20,150 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Title of the Settings Page -->
+    <!-- Title -->
     <TextView
         android:id="@+id/settings_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Settings"
-        android:textSize="34sp"
+        android:textSize="45sp"
         android:textStyle="bold"
-        android:layout_gravity="center"
-        android:paddingTop="36dp"
+        android:layout_gravity="start"
+        android:paddingTop="30dp"
         android:paddingBottom="16dp"
+        android:paddingStart="36dp"
         android:textColor="#333" />
 
-    <!-- Settings Option for Account Information -->
-    <Button
-        android:id="@+id/account_information"
+    <!-- Account Information Option -->
+    <LinearLayout
+        android:id="@+id/account_information_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Account Information"
-        android:textSize="18sp"
-        android:background="?android:attr/selectableItemBackground"
-        android:textColor="#00796b"
+        android:orientation="horizontal"
         android:padding="12dp"
-        android:layout_marginBottom="10dp"/>
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/account_information"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Account Information"
+            android:textSize="25sp"
+            android:textColor="#00796b"
+            android:gravity="start"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/account_info_arrow"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u203A"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#00796b"
+            android:paddingStart="8dp"/>
+    </LinearLayout>
 
-    <!-- Settings Option for Profile -->
-    <Button
-        android:id="@+id/profile"
+    <!-- Profile Option -->
+    <LinearLayout
+        android:id="@+id/profile_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textSize="18sp"
-        android:background="?android:attr/selectableItemBackground"
-        android:textColor="#00796b"
+        android:orientation="horizontal"
         android:padding="12dp"
-        android:layout_marginBottom="10dp"/>
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/profile"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Profile"
+            android:textSize="25sp"
+            android:textColor="#00796b"
+            android:gravity="start"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/profile_arrow"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u203A"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#00796b"
+            android:paddingStart="8dp"/>
+    </LinearLayout>
 
-    <!-- Settings Option for Running History -->
-    <Button
-        android:id="@+id/running_history"
+    <!-- Running History Option -->
+    <LinearLayout
+        android:id="@+id/running_history_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Running History"
-        android:textSize="18sp"
-        android:background="?android:attr/selectableItemBackground"
-        android:textColor="#00796b"
+        android:orientation="horizontal"
         android:padding="12dp"
-        android:layout_marginBottom="10dp"/>
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/running_history"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Running History"
+            android:textSize="25sp"
+            android:textColor="#00796b"
+            android:gravity="start"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/running_history_arrow"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u203A"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#00796b"
+            android:paddingStart="8dp"/>
+    </LinearLayout>
 
-    <!-- Settings Option for Calibration -->
-    <Button
-        android:id="@+id/calibration"
+    <!-- Calibration Option -->
+    <LinearLayout
+        android:id="@+id/calibration_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calibration"
-        android:textSize="18sp"
-        android:background="?android:attr/selectableItemBackground"
-        android:textColor="#00796b"
+        android:orientation="horizontal"
         android:padding="12dp"
-        android:layout_marginBottom="10dp"/>
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/calibration"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Calibration"
+            android:textSize="25sp"
+            android:textColor="#00796b"
+            android:gravity="start"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/calibration_arrow"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u203A"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="#00796b"
+            android:paddingStart="8dp"/>
+    </LinearLayout>
 
 </LinearLayout>

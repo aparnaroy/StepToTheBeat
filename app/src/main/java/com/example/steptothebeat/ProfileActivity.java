@@ -7,7 +7,7 @@ public class ProfileActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
-        addMenuBarSpace();
+        addMenuBarSpace(R.id.profile);
 
         // Set up toolbar
         setupToolbar(R.id.toolbar, true);

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +20,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         // Subclasses must call setContentView in their onCreate()
     }
 
-    public void addMenuBarSpace() {
+    public void addMenuBarSpace(int viewId) {
         // Make menu bar not be all the way at the top of the screen
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(viewId), (v, insets) -> {
             v.setPadding(
                     insets.getInsets(WindowInsetsCompat.Type.systemBars()).left,
                     insets.getInsets(WindowInsetsCompat.Type.systemBars()).top,
@@ -55,17 +54,23 @@ public abstract class BaseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId(); // Get the clicked menu item ID
 
+        // Get the current activity's class name
+        String currentActivityName = this.getClass().getSimpleName();
+
         if (id == R.id.action_home) {
-            // Handle home button click
+            // Go to Home page
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.action_settings) {
-            // Handle settings button click
-            Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show();
+            // Go to Settings page if we're not already on it
+            if (!currentActivityName.equals(SettingsActivity.class.getSimpleName())) {
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+            }
             return true;
         } else if (id == android.R.id.home) {
-            // Handle back button click
+            // Go back
             getOnBackPressedDispatcher().onBackPressed();
             return true;
         }

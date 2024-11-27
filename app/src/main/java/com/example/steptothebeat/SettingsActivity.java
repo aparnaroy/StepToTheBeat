@@ -12,7 +12,7 @@ public class SettingsActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
-        addMenuBarSpace();
+        addMenuBarSpace(R.id.settings);
         setupToolbar(R.id.toolbar, true);
 
         initializeButtons();
@@ -24,6 +24,10 @@ public class SettingsActivity extends BaseActivity {
         Button profileButton = findViewById(R.id.profile);
         Button runningHistoryButton = findViewById(R.id.running_history);
         Button calibrationButton = findViewById(R.id.calibration);
+        Button accountInfoArrowButton = findViewById(R.id.account_info_arrow);
+        Button profileArrowButton = findViewById(R.id.profile_arrow);
+        Button runningHistoryArrowButton = findViewById(R.id.running_history_arrow);
+        Button calibrationArrowButton = findViewById(R.id.calibration_arrow);
 
 //        accountInfoButton.setOnClickListener(v -> {
 //            // Navigate to Account Information Activity
@@ -32,6 +36,12 @@ public class SettingsActivity extends BaseActivity {
 //        });
 
         profileButton.setOnClickListener(v -> {
+            // Navigate to Profile Activity
+            Intent intent = new Intent(SettingsActivity.this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
+        profileArrowButton.setOnClickListener(v -> {
             // Navigate to Profile Activity
             Intent intent = new Intent(SettingsActivity.this, ProfileActivity.class);
             startActivity(intent);
