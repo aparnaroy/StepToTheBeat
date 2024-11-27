@@ -10,6 +10,6 @@ public class ProfileActivity extends BaseActivity {
         addMenuBarSpace(R.id.profile);
 
         // Set up toolbar
-        setupToolbar(R.id.toolbar, true);
+        setupToolbar(R.id.menubar, true);
     }
 }

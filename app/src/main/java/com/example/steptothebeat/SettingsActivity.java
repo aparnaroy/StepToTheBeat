@@ -13,7 +13,7 @@ public class SettingsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         addMenuBarSpace(R.id.settings);
-        setupToolbar(R.id.toolbar, true);
+        setupToolbar(R.id.menubar, true);
 
         initializeButtons();
     }

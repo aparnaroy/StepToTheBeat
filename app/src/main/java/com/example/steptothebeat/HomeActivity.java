@@ -49,8 +49,8 @@ public class HomeActivity extends AppCompatActivity {
         startWorkoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Go to StartWorkout Page
-                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                // Go to ChoosePace Page
+                Intent intent = new Intent(HomeActivity.this, ChoosePaceActivity.class);
                 startActivity(intent);
             }
         });

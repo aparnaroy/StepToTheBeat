@@ -47,5 +47,14 @@
             </intent-filter>
         </activity>
 
+        <!-- Choose Pace Page -->
+        <activity
+            android:name=".ChoosePaceActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
