@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background_gradient">
+
+    <!-- Top Menu Bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#DBFAED"
+        android:titleTextColor="?attr/colorOnPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Title of the Settings Page -->
+    <TextView
+        android:id="@+id/settings_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingTop="36dp"
+        android:paddingBottom="16dp"
+        android:textColor="#333" />
+
+    <!-- Settings Option for Account Information -->
+    <Button
+        android:id="@+id/account_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Account Information"
+        android:textSize="18sp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="#00796b"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Settings Option for Profile -->
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="18sp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="#00796b"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Settings Option for Running History -->
+    <Button
+        android:id="@+id/running_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Running History"
+        android:textSize="18sp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="#00796b"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Settings Option for Calibration -->
+    <Button
+        android:id="@+id/calibration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calibration"
+        android:textSize="18sp"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="#00796b"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>

@@ -3,7 +3,6 @@ package com.example.steptothebeat;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -15,7 +14,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home); // Set the layout to activity_home.xml
+        setContentView(R.layout.home_activity); // Set the layout to activity_home.xml
         EdgeToEdge.enable(this);
 
         init();
@@ -33,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Go to Profile page
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Go to Settings page
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
