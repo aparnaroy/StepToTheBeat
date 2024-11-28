@@ -15,7 +15,7 @@
         <clip>
             <shape>
                 <corners android:radius="15dp" /> <!-- Rounded corners -->
-                <solid android:color="@color/pinkle" /> <!-- Progress color -->
+                <solid android:color="@color/orchid" /> <!-- Progress color -->
             </shape>
         </clip>
     </item>

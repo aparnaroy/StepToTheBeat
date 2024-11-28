@@ -8,6 +8,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -15,6 +18,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import java.util.Random;
 
@@ -50,7 +55,6 @@ public class RunCalibrationActivity extends BaseActivity {
     void initializeButtons() {
         LinearLayout startCalibrationButton = findViewById(R.id.startCalibrationButton);
         progressBar = findViewById(R.id.progressBarRun);
-        TextView startButtonText = findViewById(R.id.startButtonText);
 
         startCalibrationButton.setOnClickListener(v -> {
             // Hide the Start button
@@ -62,6 +66,16 @@ public class RunCalibrationActivity extends BaseActivity {
             // Start step detection
             startStepDetection();
         });
+
+        // Make the word "RUN" orchid colored
+        TextView taskTextView = findViewById(R.id.taskText);
+        String text = taskTextView.getText().toString();
+        SpannableString spannableString = new SpannableString(text);
+        int orchidColor = ContextCompat.getColor(this, R.color.orchid);
+        int start = text.indexOf("RUN");
+        int end = start + "RUN".length();
+        spannableString.setSpan(new ForegroundColorSpan(orchidColor), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        taskTextView.setText(spannableString);
     }
 
     private void startStepDetection() {
@@ -200,15 +214,41 @@ public class RunCalibrationActivity extends BaseActivity {
 
     private void showStepsPerMinuteDialog(int spm) {
         runOnUiThread(() -> {
+            // Create a LinearLayout to hold the message
+            LinearLayout layout = new LinearLayout(RunCalibrationActivity.this);
+            layout.setOrientation(LinearLayout.VERTICAL);
+            layout.setPadding(70, 40, 70, 20); // Add padding for spacing
+            // Create the main message (Steps per minute)
+            TextView mainMessage = new TextView(RunCalibrationActivity.this);
+            mainMessage.setText("Steps per minute: " + spm);
+            mainMessage.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Set the text size
+            mainMessage.setTextColor(getResources().getColor(R.color.black)); // Set text color
+
+            // Create the additional message (Thank you text)
+            TextView additionalMessage = new TextView(RunCalibrationActivity.this);
+            additionalMessage.setText("Thank you for calibrating for a more personalized app experience!");
+            additionalMessage.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20); // Set a smaller text size
+            additionalMessage.setTextColor(getResources().getColor(R.color.gray)); // Set a different color for smaller text
+
+            // Create a space (empty view) between the two text views
+            View space = new View(RunCalibrationActivity.this);
+            LinearLayout.LayoutParams spaceParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, 30); // Set height of space (30px or adjust as needed)
+            space.setLayoutParams(spaceParams);
+
+            // Add the views to the layout
+            layout.addView(mainMessage);
+            layout.addView(space); // Add space between the messages
+            layout.addView(additionalMessage);
+
+            // Create the dialog with the custom layout
             AlertDialog dialog = new AlertDialog.Builder(RunCalibrationActivity.this)
                     .setTitle("Run Calibration Complete")
-                    .setMessage("Steps per minute: " + spm)
+                    .setView(layout) // Set the custom view here
                     .setPositiveButton("Done", (dialog1, which) -> {
                         // Handle "Done" button click
                         dialog1.dismiss();
-
-                        // Go back to Settings
-                        finish();
+                        finish(); // Go back to Settings
                     })
                     .setCancelable(false) // Prevent dismissing the dialog by tapping outside
                     .show();
@@ -219,21 +259,16 @@ public class RunCalibrationActivity extends BaseActivity {
                 title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30); // Set title text size
             }
 
-            // Set message text size programmatically
-            TextView message = dialog.findViewById(android.R.id.message);
-            if (message != null) {
-                message.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Make message bigger
-                message.setTextColor(getResources().getColor(R.color.black)); // Set message color to black
-            }
-
             // Set "Done" button text size and color
             Button nextButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
             if (nextButton != null) {
-                nextButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Make button text bigger
-                nextButton.setTextColor(getResources().getColor(R.color.purple)); // Set button text color to purple
+                nextButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Set button text size
+                nextButton.setTextColor(getResources().getColor(R.color.purple)); // Set button text color
             }
         });
     }
+
+
 
     @Override
     protected void onDestroy() {

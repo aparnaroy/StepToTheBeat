@@ -3,11 +3,15 @@ package com.example.steptothebeat;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -15,6 +19,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import java.util.Random;
 
@@ -50,7 +56,6 @@ public class WalkCalibrationActivity extends BaseActivity {
     void initializeButtons() {
         LinearLayout startCalibrationButton = findViewById(R.id.startCalibrationButton);
         progressBar = findViewById(R.id.progressBarWalk);
-        TextView startButtonText = findViewById(R.id.startButtonText);
 
         startCalibrationButton.setOnClickListener(v -> {
             // Hide the Start button
@@ -62,6 +67,16 @@ public class WalkCalibrationActivity extends BaseActivity {
             // Start step detection
             startStepDetection();
         });
+
+        // Make the word "WALK" blue
+        TextView taskTextView = findViewById(R.id.taskText);
+        String text = taskTextView.getText().toString();
+        SpannableString spannableString = new SpannableString(text);
+        int blueColor = ContextCompat.getColor(this, R.color.blue);
+        int start = text.indexOf("WALK");
+        int end = start + "WALK".length();
+        spannableString.setSpan(new ForegroundColorSpan(blueColor), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        taskTextView.setText(spannableString);
     }
 
     private void startStepDetection() {
