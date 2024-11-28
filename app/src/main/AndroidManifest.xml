@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StepToTheBeat"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -59,6 +60,24 @@
         <!-- Select Genre Page -->
         <activity
             android:name=".SelectGenreActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- Walk Calibration Page -->
+        <activity
+            android:name=".WalkCalibrationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- Run Calibration Page -->
+        <activity
+            android:name=".RunCalibrationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

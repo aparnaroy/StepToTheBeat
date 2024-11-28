@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 public class SettingsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +49,11 @@ public class SettingsActivity extends BaseActivity {
 //            Intent intent = new Intent(SettingsActivity.this, RunningHistoryActivity.class);
 //            startActivity(intent);
 //        });
-//
-//        calibrationButton.setOnClickListener(v -> {
-//            // Navigate to Calibration Activity
-//            Intent intent = new Intent(SettingsActivity.this, CalibrationActivity.class);
-//            startActivity(intent);
-//        });
+
+        calibrationButton.setOnClickListener(v -> {
+            // Navigate to Calibration Activity
+            Intent intent = new Intent(SettingsActivity.this, WalkCalibrationActivity.class);
+            startActivity(intent);
+        });
     }
 }
