@@ -66,9 +66,18 @@
             </intent-filter>
         </activity>
 
-        <!-- Calibration Page -->
+        <!-- Walk Calibration Page -->
         <activity
-            android:name=".CalibrationActivity"
+            android:name=".WalkCalibrationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- Run Calibration Page -->
+        <activity
+            android:name=".RunCalibrationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
