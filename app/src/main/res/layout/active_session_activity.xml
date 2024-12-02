@@ -43,14 +43,14 @@
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/end_session"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="395dp"
-        android:layout_marginTop="650dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="524dp"
         android:background="@android:color/transparent"
         android:contentDescription="StopButton"
         android:scaleType="centerInside"
-        android:src="@drawable/stop"
+        android:src="@drawable/stop_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
