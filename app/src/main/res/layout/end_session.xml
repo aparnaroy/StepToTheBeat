@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/session_summary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
@@ -23,10 +23,10 @@
 
     <!-- Page Title in Menu Bar -->
     <TextView
-        android:id="@+id/titleProfile"
+        android:id="@+id/titleSummary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Active Session"
+        android:text="Session Summary"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -42,11 +42,14 @@
         android:id="@+id/exampleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:text="Hello, World!"
-        android:textSize="18sp"
+        android:layout_marginTop="272dp"
+        android:text="Workout session complete!"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menubar" />
 
