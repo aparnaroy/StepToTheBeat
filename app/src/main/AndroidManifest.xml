@@ -48,6 +48,24 @@
             </intent-filter>
         </activity>
 
+        <!-- Active Session Page -->
+        <activity
+            android:name=".ActiveSessionActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- Active Session Page -->
+        <activity
+            android:name=".SessionSummaryActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <!-- Choose Pace Page -->
         <activity
             android:name=".ChoosePaceActivity"

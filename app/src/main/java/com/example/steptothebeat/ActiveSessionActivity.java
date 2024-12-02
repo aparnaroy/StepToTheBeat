@@ -9,13 +9,18 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ActiveSessionActivity extends AppCompatActivity {
+public class ActiveSessionActivity extends BaseActivity {
     private ImageButton endSessionButton, pauseButton, startWorkoutButton, achievementsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.active_session_activity); // Set the layout to activity_home.xml
+        addMenuBarSpace(R.id.active_session);
+
+        // Set up toolbar
+        setupToolbar(R.id.menubar, true);
+
         EdgeToEdge.enable(this);
 
         // Get the activity type passed from the ChoosePaceActivity
