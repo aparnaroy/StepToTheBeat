@@ -4,40 +4,47 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ActiveSessionActivity extends AppCompatActivity {
-    private ImageButton profileButton, settingsButton, startWorkoutButton, achievementsButton;
+    private ImageButton endSessionButton, pauseButton, startWorkoutButton, achievementsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity); // Set the layout to activity_home.xml
+        setContentView(R.layout.active_session_activity); // Set the layout to activity_home.xml
         EdgeToEdge.enable(this);
+
+        // Get the activity type passed from the ChoosePaceActivity
+        String pace = getIntent().getStringExtra("pace");
+        // Display the activity type in a TextView (just for example)
+        TextView selectedActivityTextView = findViewById(R.id.exercise);
+        if (pace != null) {
+            selectedActivityTextView.setText("Exercise: " + pace);
+        }
 
         init();
     }
 
     void init() {
         // Initialize the 4 buttons
-        profileButton = findViewById(R.id.profileButton);
-        settingsButton = findViewById(R.id.settingsButton);
-        startWorkoutButton = findViewById(R.id.startWorkoutButton);
-        achievementsButton = findViewById(R.id.achievementsButton);
+        endSessionButton = findViewById(R.id.end_session);
+        pauseButton = findViewById(R.id.pause_button);
 
         // Navigate to correct page on button click
-        profileButton.setOnClickListener(new View.OnClickListener() {
+        endSessionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Go to Profile page
-                Intent intent = new Intent(ActiveSessionActivity.this, ProfileActivity.class);
+                // Go to Session Summary page
+                Intent intent = new Intent(ActiveSessionActivity.this, SessionSummaryActivity.class);
                 startActivity(intent);
             }
         });
 
-        settingsButton.setOnClickListener(new View.OnClickListener() {
+        pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Go to Settings page
@@ -46,22 +53,5 @@ public class ActiveSessionActivity extends AppCompatActivity {
             }
         });
 
-        startWorkoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Go to ChoosePace Page
-                Intent intent = new Intent(ActiveSessionActivity.this, ChoosePaceActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        achievementsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Go to Achievements page
-                Intent intent = new Intent(ActiveSessionActivity.this, ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
