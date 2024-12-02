@@ -21,6 +21,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Page Title in Menu Bar -->
+    <TextView
+        android:id="@+id/titleProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Active Session"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- Main Content -->
     <!-- Add any UI elements you had or plan to add here -->
     <!-- Example: -->
@@ -28,11 +42,12 @@
         android:id="@+id/exampleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
         android:text="Hello, World!"
         android:textSize="18sp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintTop_toBottomOf="@id/menubar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
