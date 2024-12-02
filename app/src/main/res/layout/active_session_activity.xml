@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/active_session"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    tools:context=".MainActivity">
+
+    <!-- Top Menu Bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/menubar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#DBFAED"
+        android:titleTextColor="?attr/colorOnPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Page Title in Menu Bar -->
+    <TextView
+        android:id="@+id/titleActive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Active Session"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Main Content -->
+    <!-- Add any UI elements you had or plan to add here -->
+    <!-- Example: -->
+
+    <!-- Hearbeat Icon Button -->
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/end_session"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="524dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="StopButton"
+        android:scaleType="centerInside"
+        android:src="@drawable/stop_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/heartbeaticon"
+        android:layout_width="231dp"
+        android:layout_height="247dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="256dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="HeartbeatIcon"
+        android:scaleType="centerInside"
+        android:src="@drawable/heartbeat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exercise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="560dp"
+        android:fontFamily=""
+        android:text="Exercise: "
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <TextView
+        android:id="@+id/tempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="585dp"
+        android:text="143 BPM"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="450dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="635dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <TextView
+        android:id="@+id/now_playing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="700dp"
+        android:text="Now Playing:"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <TextView
+        android:id="@+id/current_track"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="740dp"
+        android:text="Toxic -  Britney Spears"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/pause_button"
+        android:layout_width="71dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="900dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="PauseButton"
+        android:scaleType="centerInside"
+        android:src="@drawable/pause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
