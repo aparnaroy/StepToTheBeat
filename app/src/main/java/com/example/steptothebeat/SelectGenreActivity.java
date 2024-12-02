@@ -13,6 +13,9 @@ public class SelectGenreActivity extends BaseActivity {
 
 //        initializeButtons();
 
+        // TODO: Add the buttons to take you to active session
+        // TODO: Pass the "pace" along with the intent so it displays properly in the Active Session
+
         // Get the activity type passed from the ChoosePaceActivity
         String pace = getIntent().getStringExtra("pace");
 
