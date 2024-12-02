@@ -23,7 +23,7 @@
 
     <!-- Page Title in Menu Bar -->
     <TextView
-        android:id="@+id/titleProfile"
+        android:id="@+id/titleActive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Active Session"
@@ -38,16 +38,96 @@
     <!-- Main Content -->
     <!-- Add any UI elements you had or plan to add here -->
     <!-- Example: -->
+
+    <!-- Hearbeat Icon Button -->
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/end_session"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="395dp"
+        android:layout_marginTop="650dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="StopButton"
+        android:scaleType="centerInside"
+        android:src="@drawable/stop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/heartbeaticon"
+        android:layout_width="231dp"
+        android:layout_height="247dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="256dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="HeartbeatIcon"
+        android:scaleType="centerInside"
+        android:src="@drawable/heartbeat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/exampleText"
+        android:id="@+id/tempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:text="Hello, World!"
-        android:textSize="18sp"
+        android:layout_marginTop="592dp"
+        android:fontFamily=""
+        android:text="143 BPM"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="450dp"
+        android:layout_height="300dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="699dp" />
+
+    <TextView
+        android:id="@+id/now_playing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="704dp"
+        android:text="Now Playing:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <TextView
+        android:id="@+id/current_track"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="740dp"
+        android:text="Toxic -  Britney Spears"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menubar" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/pause_button"
+        android:layout_width="71dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="900dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="PauseButton"
+        android:scaleType="centerInside"
+        android:src="@drawable/pause"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
