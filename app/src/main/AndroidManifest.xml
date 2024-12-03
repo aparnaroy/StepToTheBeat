@@ -111,5 +111,14 @@
             </intent-filter>
         </activity>
 
+        <!-- View Achievements Page -->
+        <activity
+            android:name=".AchievementsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

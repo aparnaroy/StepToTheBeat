@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Go to Achievements page
-                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(HomeActivity.this, AchievementsActivity.class);
                 startActivity(intent);
             }
         });
