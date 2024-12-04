@@ -3,19 +3,8 @@ package com.example.steptothebeat;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.spotify.android.appremote.*;
-import com.spotify.android.appremote.api.SpotifyAppRemote;
-import com.spotify.android.appremote.api.ConnectionParams;
-import com.spotify.android.appremote.api.Connector;
-import com.spotify.android.appremote.api.SpotifyAppRemote;
-import com.spotify.protocol.client.Subscription;
-import com.spotify.protocol.types.PlayerState;
-import com.spotify.protocol.types.Track;
 
 public class ProfileActivity extends BaseActivity {
-    private static final String CLIENT_ID = "57f00fa0bc2d45348bcd7857291e35c9";
-    private static final String REDIRECT_URI = "https://open.spotify.com/";
-    private SpotifyAppRemote mSpotifyAppRemote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,55 +16,6 @@ public class ProfileActivity extends BaseActivity {
         // Set up toolbar
         setupToolbar(R.id.menubar, true);
     }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        ConnectionParams connectionParams =
-                new ConnectionParams.Builder(CLIENT_ID)
-                        .setRedirectUri(REDIRECT_URI)
-                        .showAuthView(true)
-                        .build();
-
-        SpotifyAppRemote.connect(this, connectionParams,
-                new Connector.ConnectionListener() {
-                    @Override
-                    public void onConnected(SpotifyAppRemote spotifyAppRemote) {
-                        mSpotifyAppRemote = spotifyAppRemote;
-                        Log.d("ProfileActivity", "Connected! Yay!");
-
-                        // Now you can start interacting with App Remote
-                        connected();
-
-                    }
-                    @Override
-                    public void onFailure(Throwable throwable) {
-                        Log.e("ProfileActivity", throwable.getMessage(), throwable);
-
-                        // Something went wrong when attempting to connect! Handle errors here
-                    }
-                });
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        SpotifyAppRemote.disconnect(mSpotifyAppRemote);
-    }
-
-    private void connected() {
-        // Play a playlist
-        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
-
-        // Subscribe to PlayerState
-        mSpotifyAppRemote.getPlayerApi()
-                .subscribeToPlayerState()
-                .setEventCallback(playerState -> {
-                    final Track track = playerState.track;
-                    if (track != null) {
-                        Log.d("ProfileActivity", track.name + " by " + track.artist.name);
-                    }
-                });
-    }
 }
+
+
