@@ -8,10 +8,21 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import com.spotify.android.appremote.*;
+import com.spotify.android.appremote.api.SpotifyAppRemote;
+import com.spotify.android.appremote.api.ConnectionParams;
+import com.spotify.android.appremote.api.Connector;
+import com.spotify.android.appremote.api.SpotifyAppRemote;
+import com.spotify.protocol.client.Subscription;
+import com.spotify.protocol.types.PlayerState;
+import com.spotify.protocol.types.Track;
+
 
 import java.util.Random;
 
+
 public class MainActivity extends AppCompatActivity {
+
     private static final String TAG = "SensorInfo";
     private static final float STEP_THRESHOLD = 10.0f; // Threshold for detecting a step
     private static final long STEP_INTERVAL = 300; // Minimum time between steps (ms)
@@ -29,8 +40,13 @@ public class MainActivity extends AppCompatActivity {
     private boolean stopDetection = false; // Flag to stop detection after 30 seconds
     private Random random = new Random();
 
+    private static final String CLIENT_ID = "57f00fa0bc2d45348bcd7857291e35c9";
+    private static final String REDIRECT_URI = "https://open.spotify.com/";
+    private SpotifyAppRemote mSpotifyAppRemote;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("MainActivity", "inside onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.active_session_activity);
         EdgeToEdge.enable(this);
@@ -55,6 +71,56 @@ public class MainActivity extends AppCompatActivity {
             startTime = System.currentTimeMillis();
             mockAccelerometerData(); // Simulate detecting steps with random fake steps
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ConnectionParams connectionParams =
+                new ConnectionParams.Builder(CLIENT_ID)
+                        .setRedirectUri(REDIRECT_URI)
+                        .showAuthView(true)
+                        .build();
+
+        SpotifyAppRemote.connect(this, connectionParams,
+                new Connector.ConnectionListener() {
+
+                    public void onConnected(SpotifyAppRemote spotifyAppRemote) {
+                        mSpotifyAppRemote = spotifyAppRemote;
+                        Log.d("MainActivity", "Connected! Yay!");
+
+                        // Now you can start interacting with App Remote
+                        connected();
+
+                    }
+
+                    public void onFailure(Throwable throwable) {
+                        Log.e("MyActivity", throwable.getMessage(), throwable);
+
+                        // Something went wrong when attempting to connect! Handle errors here
+                    }
+                });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SpotifyAppRemote.disconnect(mSpotifyAppRemote);
+    }
+
+    private void connected() {
+        // Play a playlist
+        mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
+
+        // Subscribe to PlayerState
+        mSpotifyAppRemote.getPlayerApi()
+                .subscribeToPlayerState()
+                .setEventCallback(playerState -> {
+                    final Track track = playerState.track;
+                    if (track != null) {
+                        Log.d("MainActivity", track.name + " by " + track.artist.name);
+                    }
+                });
     }
 
     private void mockAccelerometerData() {

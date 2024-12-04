@@ -50,9 +50,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="397dp"
         android:layout_height="867dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,9 +64,9 @@
 
         <LinearLayout
             android:id="@+id/genres"
-            android:layout_width="340dp"
-            android:layout_height="181dp"
-            android:layout_marginBottom="26dp"
+            android:layout_width="332dp"
+            android:layout_height="147dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/button_blue"
             android:clipToPadding="false"
             android:orientation="horizontal"
@@ -97,8 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:background="@drawable/genre_dropdown"
-                    android:spinnerMode="dropdown"
-                    />
+                    android:spinnerMode="dropdown" />
 
 
             </LinearLayout>
@@ -113,29 +111,67 @@
 
         <LinearLayout
             android:id="@+id/popular_playlists"
-            android:layout_width="340dp"
-            android:layout_height="110dp"
-            android:layout_marginBottom="26dp"
+            android:layout_width="346dp"
+            android:layout_height="146dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/button_indigo"
             android:clipToPadding="false"
             android:orientation="horizontal"
             android:padding="12dp">
 
-            <TextView
-                android:id="@+id/popular_playlists_text"
+            <LinearLayout
                 android:layout_width="276dp"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:paddingLeft="10dp"
-                android:text="Popular Picks"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+                android:layout_height="117dp"
+                android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/popular_picks_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/popular_playlists_text"
+                    android:layout_width="276dp"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="10dp"
+                    android:text="Popular Picks"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="10sp"
+                    android:textSize="20sp"
+                    android:text="• Today's Top Hits\n• 2010's Pop\n• 80's Rock" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="bottom"
+                android:layout_marginBottom="8dp">
+
+
+                <RadioButton
+                    android:id="@+id/top_hits_button"
+                    android:layout_width="46dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="1dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/pop_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                   />
+
+                <RadioButton
+                    android:id="@+id/rock_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    />
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -144,7 +180,7 @@
             android:id="@+id/surprise_me"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="26dp"
+            android:layout_marginBottom="120dp"
             android:background="@drawable/button_purple"
             android:clipToPadding="false"
             android:orientation="horizontal"
