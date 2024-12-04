@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class SelectGenreActivity extends BaseActivity {
-    public String[] dropdownOptions = {"Select One:","Pop","Rock","Rap","Dubstep","Hip-Hop"};
+    public String[] dropdownOptions = {"Select One:","Pop","Rock","Rap","Dubstep"};
     private RadioButton selectedButton = null;
     private String dropDownSelection = null;
     boolean dropdownInitialized = false;
@@ -93,6 +93,8 @@ public class SelectGenreActivity extends BaseActivity {
                 value = "Surprise Me";
             }
             intent.putExtra("playlist", value); // Passing data
+            intent.putExtra("pace", pace);
+            intent.putExtra("genre", genreDropdown.getSelectedItem().toString());
             startActivity(intent);
         });
 
