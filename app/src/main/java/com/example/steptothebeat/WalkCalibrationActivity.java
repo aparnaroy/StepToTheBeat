@@ -28,7 +28,7 @@ public class WalkCalibrationActivity extends BaseActivity {
     private static final String TAG = "SensorInfo";
     private static final float STEP_THRESHOLD = 10.0f; // Threshold for detecting a step
     private static final long STEP_INTERVAL = 300; // Minimum time between steps (ms)
-    private static final long STEP_DETECTION_TIME = 30000; // 30 seconds of calibration time
+    private static final long STEP_DETECTION_TIME = 10000; // 30 seconds of calibration time
 
     private SensorManager sensorManager;
     private Sensor accelerometer;

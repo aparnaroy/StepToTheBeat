@@ -43,16 +43,15 @@ public class ViewGeneratedPlaylist extends BaseActivity {
         //get playlist based on genre and pace
 
         if (playlist != null) {
-            selectedActivityTextView.setText("Selected playlist: " + playlist);
             selectedActivityTextView.setText(playlist);
         }
         if (genre != null) {
             // Display selected genre, or use it for playlist generation logic
-            selectedGenreTextView.setText("Selected genre: " + genre);
+            selectedGenreTextView.setText(genre);
         }
         if (pace != null) {
             // Display selected pace, or use it for playlist generation logic
-            selectedPaceTextView.setText("Selected pace: " + pace);
+            selectedPaceTextView.setText(pace);
             Log.d("ViewGeneratedPlaylist", "Selected Pace: " + pace);
         }
 
@@ -106,6 +105,11 @@ public class ViewGeneratedPlaylist extends BaseActivity {
                     final Track track = playerState.track;
                     if (track != null) {
                         Log.d("ViewGeneratedPlaylist", track.name + " by " + track.artist.name);
+                    // Send track and artist info to ActiveSessionActivity
+                        Intent intent = new Intent(ViewGeneratedPlaylist.this, ActiveSessionActivity.class);
+                        intent.putExtra("track", track.name);
+                        intent.putExtra("artist", track.artist.name);
+                        startActivity(intent);
                     }
                 });
     }

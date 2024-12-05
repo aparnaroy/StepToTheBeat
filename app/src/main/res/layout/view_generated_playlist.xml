@@ -93,29 +93,31 @@
         app:layout_constraintTop_toBottomOf="@+id/selected_playlist_text"
         app:layout_constraintVertical_bias="1.0">
 
-        <LinearLayout
-            android:id="@+id/surprise_me"
-            android:layout_width="333dp"
-            android:layout_height="601dp"
-            android:layout_marginBottom="60dp"
-            android:background="@drawable/button_hollow_purple"
-            android:clipToPadding="false"
-            android:orientation="horizontal"
-            android:padding="12dp">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/surprise_me"-->
+<!--            android:layout_width="333dp"-->
+<!--            android:layout_height="601dp"-->
+<!--            android:layout_marginBottom="60dp"-->
+<!--            android:background="@drawable/button_hollow_purple"-->
+<!--            android:clipToPadding="false"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="12dp">-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
         <LinearLayout
             android:id="@+id/start_run"
             android:layout_width="280dp"
             android:layout_height="70dp"
-            android:layout_marginBottom="26dp"
             android:background="@drawable/button_orchid"
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="12dp">
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/generate_playlist_text"
