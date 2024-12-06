@@ -94,54 +94,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menubar" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="450dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="635dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menubar" />
-
-    <TextView
-        android:id="@+id/now_playing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="700dp"
-        android:text="Now Playing:"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/menubar" />
-
     <TextView
         android:id="@+id/current_track"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="740dp"
-        android:text="Toxic -  Britney Spears"
+        android:layout_marginTop="684dp"
+        android:text="Now Playing: "
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menubar" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/pause_button"
-        android:layout_width="71dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="900dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="PauseButton"
-        android:scaleType="centerInside"
-        android:src="@drawable/pause"
+    <TextView
+        android:id="@+id/current_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="Artist: "
+        android:textSize="16sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/current_track"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
