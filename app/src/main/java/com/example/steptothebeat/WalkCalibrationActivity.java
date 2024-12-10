@@ -81,7 +81,7 @@ public class WalkCalibrationActivity extends BaseActivity {
 
     private void startStepDetection() {
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+//        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         if (accelerometer != null) {
             Log.d(TAG, "Accelerometer sensor found. Starting step detection...");
