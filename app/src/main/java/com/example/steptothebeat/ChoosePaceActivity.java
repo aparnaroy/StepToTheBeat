@@ -24,6 +24,7 @@ public class ChoosePaceActivity extends BaseActivity {
 
         // Walk Button
         walkButton.setOnClickListener(v -> {
+            getSharedPreferences("achievements", MODE_PRIVATE).edit().putBoolean("walk_achievement_unlocked",true).apply();
             Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
             intent.putExtra("pace", "Walk");
             startActivity(intent);
