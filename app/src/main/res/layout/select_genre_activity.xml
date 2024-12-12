@@ -27,6 +27,7 @@
         android:layout_margin="16dp"
         android:gravity="center"
         android:text="Select Genre"
+        android:fontFamily="@font/sniglet"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/poller_one"
         android:paddingTop="66dp"
         android:text="Selected: "
         android:textSize="40sp"
@@ -85,6 +87,7 @@
                     android:includeFontPadding="false"
                     android:paddingLeft="10dp"
                     android:text="Genres"
+                    android:fontFamily="@font/poller_one"
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:textStyle="bold" />
@@ -131,6 +134,7 @@
                     android:includeFontPadding="false"
                     android:paddingLeft="10dp"
                     android:text="Popular Picks"
+                    android:fontFamily="@font/poller_one"
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:textStyle="bold" />
@@ -142,7 +146,9 @@
                     android:textColor="@color/white"
                     android:layout_marginLeft="10sp"
                     android:textSize="20sp"
-                    android:text="• Today's Top Hits\n• 2010's Pop\n• 80's Rock" />
+                    android:text="• Today's Top Hits\n• 2010's Pop\n• 80's Rock"
+                    android:fontFamily="@font/orbitron"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -193,6 +199,7 @@
                 android:includeFontPadding="false"
                 android:paddingStart="10dp"
                 android:text="Surprise Me!"
+                android:fontFamily="@font/poller_one"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:textStyle="bold" />
@@ -223,8 +230,9 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="Generate Playlist"
+                android:fontFamily="@font/orbitron"
                 android:textColor="@color/white"
-                android:textSize="28dp"
+                android:textSize="24dp"
                 android:textStyle="bold" />
 
 
