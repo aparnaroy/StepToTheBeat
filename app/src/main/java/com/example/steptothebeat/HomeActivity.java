@@ -83,7 +83,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Go to ChoosePace Page
                 Intent intent = new Intent(HomeActivity.this, ChoosePaceActivity.class);
-                startActivity(intent);
+                View startView = findViewById(R.id.startWorkoutButton);
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(currentA, startView, "start");
+                startActivity(intent, options.toBundle());
+                //startActivity(intent);
             }
         });
 
