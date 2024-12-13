@@ -18,20 +18,22 @@
     </FrameLayout>
 
     <!-- App Title -->
-    <TextView
+    <ImageView
         android:id="@+id/appTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:fontFamily="@font/orbitron"
-        android:textSize="85sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:layout_width="1900dp"
+        android:layout_height="1900dp"
+        android:paddingLeft="90dp"
+        android:paddingTop="60dp"
+        android:src="@drawable/title"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:scaleType="centerInside"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"/>
+        />
 
     <!-- Profile Button -->
     <!--<androidx.appcompat.widget.AppCompatImageButton
