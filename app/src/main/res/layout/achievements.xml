@@ -253,4 +253,19 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Achievements Button -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/achievementsButton"
+        android:transitionName="achievements"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:src="@drawable/trophy"
+        android:contentDescription="Achievements"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="150dp"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </LinearLayout>

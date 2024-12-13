@@ -92,7 +92,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Go to Achievements page
                 Intent intent = new Intent(HomeActivity.this, AchievementsActivity.class);
-                startActivity(intent);
+                View achievementsView = findViewById(R.id.achievementsButton);
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(currentA, achievementsView, "achievements");
+                startActivity(intent, options.toBundle());
+                //startActivity(intent);
             }
         });
     }

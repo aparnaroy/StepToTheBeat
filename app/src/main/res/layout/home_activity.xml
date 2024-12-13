@@ -91,6 +91,7 @@
     <!-- Achievements Button -->
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/achievementsButton"
+        android:transitionName="achievements"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@drawable/trophy"
