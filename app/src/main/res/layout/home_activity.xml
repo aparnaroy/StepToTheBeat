@@ -9,12 +9,21 @@
     android:background="@drawable/background_gradient"
     tools:context=".HomeActivity">
 
+
+
+    <FrameLayout
+        android:id="@+id/scene_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
     <!-- App Title -->
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:fontFamily="@font/orbitron"
         android:textSize="85sp"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -25,8 +34,8 @@
         android:gravity="center"/>
 
     <!-- Profile Button -->
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/profileButton"
+    <!--<androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/profileImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@drawable/profile"
@@ -36,11 +45,25 @@
         android:scaleType="centerInside"
         android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:transitionName="profile"/>-->
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="140dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="130dp"
+        android:contentDescription="Profile Image"
+        android:src="@drawable/profile"
+        android:transitionName="profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Settings Button -->
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/settingsButton"
+        android:transitionName="settings"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@drawable/settings_gear"
@@ -55,6 +78,7 @@
     <!-- Start Workout Button -->
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/startWorkoutButton"
+        android:transitionName="start"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@drawable/run"
@@ -69,6 +93,7 @@
     <!-- Achievements Button -->
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/achievementsButton"
+        android:transitionName="achievements"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@drawable/trophy"

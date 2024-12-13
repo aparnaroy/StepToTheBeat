@@ -24,8 +24,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Achievements"
+        android:fontFamily="@font/poller_one"
+        android:textStyle="bold"
         android:gravity="center"
         android:textSize="30sp"/>
+    <!-- Achievements Button -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/achievementsButton"
+        android:transitionName="achievements"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/trophy"
+        android:contentDescription="Achievements"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="155dp"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,7 +76,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
                     android:text="Walk with the app for the first time!\nStatus: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -86,7 +102,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
                     android:text="Exercise for 1 hour in a single session!\nStatus:Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -111,7 +127,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
                     android:text="Exercise for 14 days in a row!\nStatus:Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -136,7 +152,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
                     android:text="Match the best for greater than 85% of the session!\nStatus: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -161,7 +177,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
                     android:text="Get a perfect score!\nStatus: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -186,7 +202,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
                     android:text="Exercise for 21 days in a row!\nStatus: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -211,7 +227,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
+                    android:textStyle="bold"
                     android:text="Exercise for 50 days in a row!\n Status: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
@@ -236,7 +253,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
+                    android:fontFamily="@font/orbitron"
                     android:text="Exercise for 100 days in a row!\nStatus:Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp" />
