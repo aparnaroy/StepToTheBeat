@@ -72,9 +72,12 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Go to Settings page
                 Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-                Transition t = new AutoTransition();
 
-                startActivity(intent);
+                View settingsView = findViewById(R.id.settingsButton);
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(currentA, settingsView, "settings");
+                startActivity(intent, options.toBundle());
+                //startActivity(intent);
             }
         });
 
