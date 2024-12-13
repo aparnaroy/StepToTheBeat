@@ -9,6 +9,8 @@
     android:background="@drawable/background_gradient"
     tools:context=".HomeActivity">
 
+
+
     <FrameLayout
         android:id="@+id/scene_root"
         android:layout_width="match_parent"
@@ -32,8 +34,8 @@
         android:gravity="center"/>
 
     <!-- Profile Button -->
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/profileButton"
+    <!--<androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/profileImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@drawable/profile"
@@ -43,7 +45,20 @@
         android:scaleType="centerInside"
         android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        android:transitionName="profile"/>-->
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="140dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="130dp"
+        android:contentDescription="Profile Image"
+        android:src="@drawable/profile"
+        android:transitionName="profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Settings Button -->
     <androidx.appcompat.widget.AppCompatImageButton
