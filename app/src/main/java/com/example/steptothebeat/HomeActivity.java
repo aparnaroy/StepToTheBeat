@@ -45,10 +45,10 @@ public class HomeActivity extends AppCompatActivity {
         Activity currentA = this;
 
         // Start button floating animations
-        startFloatingAnimation(profileButton, 40f, 60f, 4000, 3500);
-        startFloatingAnimation(settingsButton, 40f, 65f, 2800, 4300);
-        startFloatingAnimation(startWorkoutButton, 40f, 65f, 3500, 4000);
-        startFloatingAnimation(achievementsButton, 40f, 60f, 4200, 3700);
+        startFloatingAnimation(profileButton, 40f, 50f, 3500, 2500);
+        startFloatingAnimation(settingsButton, 40f, 50f, 3000, 2000);
+        startFloatingAnimation(startWorkoutButton, 40f, 50f, 2800, 3300);
+        startFloatingAnimation(achievementsButton, 40f, 50f, 2200, 2700);
 
 
         // Navigate to correct page on button click
