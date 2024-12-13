@@ -92,9 +92,9 @@ public class SelectGenreActivity extends BaseActivity {
             else {
                 value = "Surprise Me";
             }
-            intent.putExtra("playlist", value); // Passing data
+            intent.putExtra("genre", value); // Passing data
             intent.putExtra("pace", pace);
-            intent.putExtra("genre", genreDropdown.getSelectedItem().toString());
+//            intent.putExtra("genre", genreDropdown.getSelectedItem().toString());
             startActivity(intent);
         });
 

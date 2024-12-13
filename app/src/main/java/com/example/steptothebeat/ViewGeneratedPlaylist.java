@@ -26,8 +26,8 @@ public class ViewGeneratedPlaylist extends BaseActivity {
         addMenuBarSpace(R.id.view_playlist);
         setupToolbar(R.id.menubar, true);
 
-        String playlist = getIntent().getStringExtra("playlist");
         String genre = getIntent().getStringExtra("genre");
+//        String genre = getIntent().getStringExtra("genre");
         String pace = getIntent().getStringExtra("pace");
 
         // Buttons
@@ -36,15 +36,11 @@ public class ViewGeneratedPlaylist extends BaseActivity {
         // Set Listeners
         startRun.setOnClickListener(view -> startRun());
 
-        TextView selectedActivityTextView = findViewById(R.id.selected_playlist_text);
+        TextView selectedPlaylistTextView = findViewById(R.id.selected_playlist_text);
         TextView selectedGenreTextView = findViewById(R.id.selected_genre_text);
         TextView selectedPaceTextView = findViewById(R.id.selected_pace_text);
 
-        //get playlist based on genre and pace
-
-        if (playlist != null) {
-            selectedActivityTextView.setText(playlist);
-        }
+        // Get playlist based on genre and pace
         if (genre != null) {
             // Display selected genre, or use it for playlist generation logic
             selectedGenreTextView.setText(genre);
@@ -54,6 +50,9 @@ public class ViewGeneratedPlaylist extends BaseActivity {
             selectedPaceTextView.setText(pace);
             Log.d("ViewGeneratedPlaylist", "Selected Pace: " + pace);
         }
+
+        // TEMPORARY TEXT TO BE REPLACED WITH SPOTIFY PLAYLIST NAME
+        selectedPlaylistTextView.setText("The Playlist Name");
 
     }
 

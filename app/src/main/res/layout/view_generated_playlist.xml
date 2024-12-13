@@ -33,112 +33,115 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <!-- Selections Title Text -->
     <TextView
-        android:id="@+id/selected_playlist_text"
+        android:id="@+id/selections_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="224dp"
-        android:paddingTop="66dp"
-        android:text="Playlist: "
+        android:layout_marginTop="60dp"
+        android:text="Your Selections"
         android:fontFamily="@font/poller_one"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/selected_pace_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
+        android:textSize="35sp"
+        app:layout_constraintTop_toBottomOf="@id/menubar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Selected Pace Text -->
     <TextView
-        android:id="@+id/selected_genre_text"
+        android:id="@+id/selected_pace_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="84dp"
-        android:paddingTop="66dp"
-        android:text="Genre: "
-        android:fontFamily="@font/poller_one"
+        android:layout_marginTop="60dp"
+        android:text="Selected Pace: "
+        android:fontFamily="@font/sniglet"
         android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/selections_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
     <TextView
         android:id="@+id/selected_pace_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="412dp"
-        android:paddingTop="66dp"
-        android:text="Pace: "
-        android:fontFamily="@font/poller_one"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:fontFamily="@font/sniglet"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/selected_pace_title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Selected Genre Text -->
+    <TextView
+        android:id="@+id/selected_genre_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Selected Genre: "
+        android:fontFamily="@font/sniglet"
         android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/selected_pace_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
+    <TextView
+        android:id="@+id/selected_genre_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:fontFamily="@font/sniglet"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/selected_genre_title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Selected Playlist Text -->
+    <TextView
+        android:id="@+id/selected_playlist_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Generated Playlist: "
+        android:fontFamily="@font/sniglet"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/selected_genre_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <TextView
+        android:id="@+id/selected_playlist_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:fontFamily="@font/sniglet"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/selected_playlist_title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Start Button -->
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="396dp"
-        android:layout_height="814dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:id="@+id/start_run"
+        android:layout_width="360dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/button_orchid"
         android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/selected_playlist_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selected_playlist_text"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintEnd_toEndOf="parent">
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/surprise_me"-->
-<!--            android:layout_width="333dp"-->
-<!--            android:layout_height="601dp"-->
-<!--            android:layout_marginBottom="60dp"-->
-<!--            android:background="@drawable/button_hollow_purple"-->
-<!--            android:clipToPadding="false"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:padding="12dp">-->
-
-<!--        </LinearLayout>-->
-
-
-        <LinearLayout
-            android:id="@+id/start_run"
-            android:layout_width="280dp"
-            android:layout_height="70dp"
-            android:background="@drawable/button_orchid"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <TextView
-                android:id="@+id/generate_playlist_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:text="Start Run"
-                android:fontFamily="@font/orbitron"
-                android:textColor="@color/white"
-                android:textSize="28dp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-
-
+        <TextView
+            android:id="@+id/generate_playlist_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Session"
+            android:fontFamily="@font/orbitron"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
