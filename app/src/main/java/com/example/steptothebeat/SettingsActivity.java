@@ -55,5 +55,11 @@ public class SettingsActivity extends BaseActivity {
             Intent intent = new Intent(SettingsActivity.this, WalkCalibrationActivity.class);
             startActivity(intent);
         });
+
+        calibrationArrowButton.setOnClickListener(v -> {
+            // Navigate to Calibration Activity
+            Intent intent = new Intent(SettingsActivity.this, WalkCalibrationActivity.class);
+            startActivity(intent);
+        });
     }
 }
