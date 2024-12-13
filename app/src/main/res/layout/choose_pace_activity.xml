@@ -34,40 +34,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Start Workout Button -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/startWorkoutButton"
+        android:layout_width="50dp"
+        android:layout_height="140dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Start Workout"
+        android:scaleType="centerInside"
+        android:src="@drawable/run"
+        android:transitionName="start"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menubar" />
+
     <!-- Button Container -->
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/titleChoosePace"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
         android:padding="16dp"
-        android:weightSum="1">
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleChoosePace">
 
         <!-- Walk Button -->
         <LinearLayout
             android:id="@+id/walk_button"
             android:layout_width="340dp"
             android:layout_height="110dp"
+            android:layout_marginBottom="26dp"
             android:background="@drawable/button_blue"
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="12dp"
-            android:layout_marginBottom="26dp">
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/walk_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/orbitron"
-                android:textStyle="bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="Walk"
                 android:textColor="@color/white"
-                android:textSize="38dp" />
+                android:textSize="38dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Power Walk Button -->
@@ -75,24 +91,24 @@
             android:id="@+id/powerwalk_button"
             android:layout_width="340dp"
             android:layout_height="110dp"
+            android:layout_marginBottom="26dp"
             android:background="@drawable/button_indigo"
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="12dp"
-            android:layout_marginBottom="26dp">
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/powerwalk_text"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:fontFamily="@font/orbitron"
-                android:textStyle="bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="Power Walk"
                 android:textColor="@color/white"
-                android:textSize="38dp" />
+                android:textSize="38dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Jog Button -->
@@ -100,24 +116,24 @@
             android:id="@+id/jog_button"
             android:layout_width="340dp"
             android:layout_height="110dp"
+            android:layout_marginBottom="26dp"
             android:background="@drawable/button_purple"
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="12dp"
-            android:layout_marginBottom="26dp">
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/jog_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/orbitron"
-                android:textStyle="bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="Jog"
                 android:textColor="@color/white"
-                android:textSize="38dp" />
+                android:textSize="38dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Run Button -->
@@ -125,24 +141,24 @@
             android:id="@+id/run_button"
             android:layout_width="340dp"
             android:layout_height="110dp"
+            android:layout_marginBottom="26dp"
             android:background="@drawable/button_orchid"
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="12dp"
-            android:layout_marginBottom="26dp">
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/run_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/orbitron"
-                android:textStyle="bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="Run"
                 android:textColor="@color/white"
-                android:textSize="38dp" />
+                android:textSize="38dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <!-- Sprint Button -->
@@ -161,12 +177,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/orbitron"
-                android:textStyle="bold"
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="Sprint"
                 android:textColor="@color/white"
-                android:textSize="38dp" />
+                android:textSize="38dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>

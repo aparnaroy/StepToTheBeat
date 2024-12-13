@@ -72,9 +72,12 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Go to Settings page
                 Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-                Transition t = new AutoTransition();
 
-                startActivity(intent);
+                View settingsView = findViewById(R.id.settingsButton);
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(currentA, settingsView, "settings");
+                startActivity(intent, options.toBundle());
+                //startActivity(intent);
             }
         });
 
@@ -83,7 +86,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Go to ChoosePace Page
                 Intent intent = new Intent(HomeActivity.this, ChoosePaceActivity.class);
-                startActivity(intent);
+                View startView = findViewById(R.id.startWorkoutButton);
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(currentA, startView, "start");
+                startActivity(intent, options.toBundle());
+                //startActivity(intent);
             }
         });
 
@@ -92,7 +99,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Go to Achievements page
                 Intent intent = new Intent(HomeActivity.this, AchievementsActivity.class);
-                startActivity(intent);
+                View achievementsView = findViewById(R.id.achievementsButton);
+                ActivityOptions options = ActivityOptions
+                        .makeSceneTransitionAnimation(currentA, achievementsView, "achievements");
+                startActivity(intent, options.toBundle());
+                //startActivity(intent);
             }
         });
     }
