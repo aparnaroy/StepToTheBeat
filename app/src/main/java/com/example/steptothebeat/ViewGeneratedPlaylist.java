@@ -97,21 +97,52 @@ public class ViewGeneratedPlaylist extends BaseActivity {
         String playlistUri = getPlaylistUriBasedOnSelection();
         mSpotifyAppRemote.getPlayerApi().play(playlistUri);
 
+        // Enable shuffle mode
+        mSpotifyAppRemote.getPlayerApi().setShuffle(true);
+
         // Subscribe to PlayerState
         mSpotifyAppRemote.getPlayerApi()
                 .subscribeToPlayerState()
                 .setEventCallback(playerState -> {
                     final Track track = playerState.track;
-                    if (track != null) {
+                    if (track != null && track.artist != null) {
                         Log.d("ViewGeneratedPlaylist", track.name + " by " + track.artist.name);
-                    // Send track and artist info to ActiveSessionActivity
+                        // Send track and artist info to ActiveSessionActivity
                         Intent intent = new Intent(ViewGeneratedPlaylist.this, ActiveSessionActivity.class);
                         intent.putExtra("track", track.name);
                         intent.putExtra("artist", track.artist.name);
-                        startActivity(intent);
+
+                        // Subscribe to PlayerContext
+                        mSpotifyAppRemote.getPlayerApi()
+                                .subscribeToPlayerContext()
+                                .setEventCallback(playerContext -> {
+                                    String playlistName = playerContext != null && playerContext.title != null
+                                            ? playerContext.title
+                                            : "Unknown Playlist";
+                                    intent.putExtra("playlist", playlistName);
+                                    Log.d("ViewGeneratedPlaylist", "Current Playlist: " + playlistName);
+
+                                    // Start ActiveSessionActivity once all data is ready
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                    startActivity(intent);
+                                })
+                                .setErrorCallback(throwable -> Log.e("ViewGeneratedPlaylist", "Failed to subscribe to PlayerContext", throwable));
                     }
-                });
+
+                    Intent broadcastIntent = new Intent("com.example.steptothebeat.SONG_UPDATE");
+                    broadcastIntent.putExtra("track", track.name);
+                    broadcastIntent.putExtra("artist", track.artist.name);
+                    broadcastIntent.putExtra("playlist", "100BPM");
+
+
+                    // Sending the broadcast
+                    sendBroadcast(broadcastIntent);
+
+                })
+                .setErrorCallback(throwable -> Log.e("ViewGeneratedPlaylist", "Failed to subscribe to PlayerState", throwable));
+
     }
+
 
     private String getPlaylistUriBasedOnSelection() {
         String genre = getIntent().getStringExtra("genre");

@@ -1,5 +1,6 @@
 package com.example.steptothebeat;
 
+
 import android.os.Bundle;
 
 public class SessionSummaryActivity extends BaseActivity {
