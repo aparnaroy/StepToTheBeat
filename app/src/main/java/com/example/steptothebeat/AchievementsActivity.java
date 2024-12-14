@@ -20,7 +20,7 @@ public class AchievementsActivity extends BaseActivity{
         setupToolbar(R.id.menubar,true);
         addMenuBarSpace(R.id.achievements);
 
-        boolean walkAchievementUnlocked = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("walk_achievement_unlocked",false); // Walk achievement unlock
+        boolean walkAchievementUnlocked = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("walk_achievement_unlocked",false); //Walk achievement unlock
 
         if (walkAchievementUnlocked){
             LinearLayout achievement1 = findViewById(R.id.achievement1);
