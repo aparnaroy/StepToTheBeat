@@ -1,6 +1,8 @@
 package com.example.steptothebeat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -77,4 +79,15 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//
+//        // Clear all preferences
+//        SharedPreferences sharedPreferences = getSharedPreferences("walk_spm", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//        editor.clear();  // Clears all data
+//        editor.apply();   // Apply changes asynchronously
+//    }
 }

@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -215,6 +216,12 @@ public class RunCalibrationActivity extends BaseActivity {
 
         // Show the dialog with SPM
         showStepsPerMinuteDialog(spm);
+
+        // Save the Run steps per minute
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("run_spm", spm);
+        editor.apply();
     }
 
     private void calibrationComplete() {

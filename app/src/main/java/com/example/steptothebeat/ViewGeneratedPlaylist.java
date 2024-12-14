@@ -13,6 +13,8 @@ import com.spotify.android.appremote.api.SpotifyAppRemote;
 import com.spotify.protocol.client.Subscription;
 import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
+import android.content.SharedPreferences;
+
 
 public class ViewGeneratedPlaylist extends BaseActivity {
     private SpotifyAppRemote mSpotifyAppRemote;
@@ -26,9 +28,15 @@ public class ViewGeneratedPlaylist extends BaseActivity {
         addMenuBarSpace(R.id.view_playlist);
         setupToolbar(R.id.menubar, true);
 
+        // Get selected pace and genre
         String genre = getIntent().getStringExtra("genre");
 //        String genre = getIntent().getStringExtra("genre");
         String pace = getIntent().getStringExtra("pace");
+
+        // Get saved steps per minute for walk and run
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        int walk_spm = sharedPreferences.getInt("walk_spm", -1);
+        int run_spm = sharedPreferences.getInt("run_spm", -1);
 
         // Buttons
         LinearLayout startRun = findViewById(R.id.start_run);
@@ -46,9 +54,24 @@ public class ViewGeneratedPlaylist extends BaseActivity {
             selectedGenreTextView.setText(genre);
         }
         if (pace != null) {
-            // Display selected pace, or use it for playlist generation logic
-            selectedPaceTextView.setText(pace);
-            Log.d("ViewGeneratedPlaylist", "Selected Pace: " + pace);
+            // Display selected pace
+            // If walk and run are calibrated and are the selected pace, show that as the BPM
+            // Else, show just the pace range if spm is not available cuz user has not calibrated yet
+            if (pace.equals("Walk") && walk_spm != -1) {
+                selectedPaceTextView.setText(pace + " (calibrated to ~" + walk_spm + " BPM)");
+            } else if (pace.equals("Run") && run_spm != -1) {
+                selectedPaceTextView.setText(pace + " (calibrated to ~" + run_spm + " BPM)");
+            } else if (pace.equals("Walk")) {
+                selectedPaceTextView.setText(pace + " (90–120 BPM)");
+            } else if (pace.equals("Power Walk")) {
+                selectedPaceTextView.setText(pace + " (120–135 BPM)");
+            } else if (pace.equals("Jog")) {
+                selectedPaceTextView.setText(pace + " (130–150 BPM)");
+            } else if (pace.equals("Run")) {
+                selectedPaceTextView.setText(pace + " (150–180 BPM)");
+            } else if (pace.equals("Sprint")) {
+                selectedPaceTextView.setText(pace + " (180–220 BPM)");
+            }
         }
 
         // TEMPORARY TEXT TO BE REPLACED WITH SPOTIFY PLAYLIST NAME
