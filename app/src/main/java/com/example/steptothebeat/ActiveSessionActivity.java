@@ -69,6 +69,7 @@ public class ActiveSessionActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 // Go to Session Summary page
+                getSharedPreferences("achievements", MODE_PRIVATE).edit().putBoolean("walk_achievement_unlocked_complete",true).apply();
                 Intent intent = new Intent(ActiveSessionActivity.this, SessionSummaryActivity.class);
                 startActivity(intent);
             }
