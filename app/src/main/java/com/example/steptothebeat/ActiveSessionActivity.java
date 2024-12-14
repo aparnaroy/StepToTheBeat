@@ -16,29 +16,7 @@ import androidx.activity.EdgeToEdge;
 public class ActiveSessionActivity extends BaseActivity {
 
     private ImageButton endSessionButton;
-    private TextView currentTrackTextView, currentArtistTextView, currentPlaylistTextView;
-
-
-    private BroadcastReceiver songUpdateReceiver = new BroadcastReceiver() {
-
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            // Get the updated track and artist info from the Intent
-            String trackName = intent.getStringExtra("track");
-            String artistName = intent.getStringExtra("artist");
-            String playlistName = intent.getStringExtra("playlist");
-
-            // Update the UI with the new track info
-            if (trackName != null && artistName != null) {
-                currentTrackTextView.setText("Now Playing: " + trackName);
-                currentArtistTextView.setText("Artist: " + artistName);
-                currentPlaylistTextView.setText("Playlist: " + playlistName);
-            }
-        }
-
-    };
-
+    private TextView currentTrackTextView, currentArtistTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,16 +25,12 @@ public class ActiveSessionActivity extends BaseActivity {
         addMenuBarSpace(R.id.active_session);
 
         // Initialize the TextViews
-        currentTrackTextView = findViewById(R.id.current_track);
+        currentTrackTextView = findViewById(R.id.current_track);  // Make sure the IDs match
         currentArtistTextView = findViewById(R.id.current_artist);
-        currentPlaylistTextView = findViewById(R.id.current_playlist);
 
-//        // Get the track and artist from the Intent
+        // Get the track and artist from the Intent
         String trackName = getIntent().getStringExtra("track");
         String artistName = getIntent().getStringExtra("artist");
-        String playlistName = getIntent().getStringExtra("playlist");
-
-//
 
         // Set up toolbar
         setupToolbar(R.id.menubar, true);
@@ -71,50 +45,16 @@ public class ActiveSessionActivity extends BaseActivity {
             selectedActivityTextView.setText("Exercise: " + pace);
         }
 
-         //Initialize views
+        // Initialize views
         if (trackName != null && artistName != null) {
             currentTrackTextView.setText("Now Playing: " + trackName);
             currentArtistTextView.setText("Artist: " + artistName);
-            currentPlaylistTextView.setText("Playlist: " + getIntent().getStringExtra("playlist"));
         }
         else{
             currentTrackTextView.setText("Now Playing: No track selected");
             currentArtistTextView.setText("Artist: No artist selected");
-            currentPlaylistTextView.setText("Playlist: No playlist selected");
         }
-        //initialize the session
         init();
-    }
-
-    @SuppressLint("NewApi")
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // Register the BroadcastReceiver to listen for updates when the activity becomes visible
-        IntentFilter filter = new IntentFilter("com.example.steptothebeat.SONG_UPDATE");
-        registerReceiver(songUpdateReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Get the initial track data from the Intent and set it when the activity comes into focus
-        String trackName = getIntent().getStringExtra("track");
-        String artistName = getIntent().getStringExtra("artist");
-        String playlistName = getIntent().getStringExtra("playlist");
-
-        if (trackName != null && artistName != null) {
-            currentTrackTextView.setText("Now Playing: " + trackName);
-            currentArtistTextView.setText("Artist: " + artistName);
-            currentPlaylistTextView.setText("Playlist: " + playlistName);
-        }
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        // Unregister the BroadcastReceiver when the activity is destroyed to avoid memory leaks
-        unregisterReceiver(songUpdateReceiver);
     }
 
     @SuppressLint("NewApi")
@@ -133,13 +73,17 @@ public class ActiveSessionActivity extends BaseActivity {
             }
         });
 
+//        pauseButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Go to Settings page
+//                Intent intent = new Intent(ActiveSessionActivity.this, SettingsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
-
     private void updateNowPlaying(String trackName, String artistName) {
         currentTrackTextView.setText("Now Playing: " + trackName);
         currentArtistTextView.setText("Artist: " + artistName);
     }
 }
-
-
-
