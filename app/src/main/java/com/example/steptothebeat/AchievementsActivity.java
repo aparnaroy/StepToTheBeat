@@ -24,13 +24,13 @@ public class AchievementsActivity extends BaseActivity{
         boolean walkAchievementUnlockedComplete = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("walk_achievement_unlocked_complete",false); //Triggered by pressing the end session button in ActiveSessionActivity.java
         boolean hourSessionAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("hour_session_achievement", false); //1+ hour session achievement
         boolean fourteenDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("fourteen_day_achievement", false); //14-day streak achievement
-        boolean runAchievementUnlocked = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("walk_achievement_unlocked",false);
+        boolean runAchievementUnlocked = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("walk_achievement_unlocked",false); //Run achievement unlock
         boolean runAchievementUnlockedComplete = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("run_achievement_unlocked_complete",false); //Triggered by pressing the end session button in ActiveSessionActivity.java
         boolean powerWalkAchievementUnlocked = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("power_walk_achievement_unlocked", false);
         boolean powerWalkAchievementComplete = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("power_walk_achievement_unlocked_complete", false);
-        boolean twentyOneDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("twentyone_day_achievement", false);
-        boolean fiftyDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("fifty_day_achievement", false);
-        boolean oneHundredDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("onehundred_day_achievement", false);
+        boolean twentyOneDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("twentyone_day_achievement", false); //21-day streak achievement
+        boolean fiftyDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("fifty_day_achievement", false); //50-day streak achievement
+        boolean oneHundredDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("onehundred_day_achievement", false); //100-day streak achievement
 
         //Checks for Walk for the first time achievement
         if (walkAchievementUnlocked && walkAchievementUnlockedComplete){
