@@ -1,9 +1,11 @@
 package com.example.steptothebeat;
 
+import android.animation.ValueAnimator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,6 +14,7 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -43,6 +46,7 @@ public class WalkCalibrationActivity extends BaseActivity {
     private Random random = new Random();
     private ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +58,21 @@ public class WalkCalibrationActivity extends BaseActivity {
     }
 
     void initializeButtons() {
+        // Toggle expanded view for calibration info box
+        LinearLayout infoCollapsed = findViewById(R.id.infoCollapsed);
+        LinearLayout infoExpanded = findViewById(R.id.infoExpanded);
+
+        infoCollapsed.setOnClickListener(view -> {
+            if (infoExpanded.getVisibility() == View.GONE) {
+                // Expand with animation
+                expandView(infoExpanded);
+            } else {
+                // Collapse with animation
+                collapseView(infoExpanded);
+            }
+        });
+
+
         LinearLayout startCalibrationButton = findViewById(R.id.startCalibrationButton);
         progressBar = findViewById(R.id.progressBarWalk);
 
@@ -76,7 +95,9 @@ public class WalkCalibrationActivity extends BaseActivity {
         int start = text.indexOf("WALK");
         int end = start + "WALK".length();
         spannableString.setSpan(new ForegroundColorSpan(blueColor), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        taskTextView.setText(spannableString);
+
+        // Apply bold style
+        spannableString.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);        taskTextView.setText(spannableString);
     }
 
     private void startStepDetection() {
@@ -258,5 +279,45 @@ public class WalkCalibrationActivity extends BaseActivity {
         if (sensorManager != null && accelerometerListener != null) {
             sensorManager.unregisterListener(accelerometerListener);
         }
+    }
+
+
+    // Smoothly expand info box
+    private void expandView(View view) {
+        view.setVisibility(View.VISIBLE);
+
+        int targetHeight = (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, 450, getResources().getDisplayMetrics());
+
+        ValueAnimator animator = ValueAnimator.ofInt(0, targetHeight);
+        animator.addUpdateListener(animation -> {
+            int animatedValue = (int) animation.getAnimatedValue();
+            view.getLayoutParams().height = animatedValue;
+            view.requestLayout();
+        });
+        animator.setDuration(300);
+        animator.start();
+    }
+
+    // Smoothly collapse info box
+    private void collapseView(View view) {
+        int initialHeight = view.getMeasuredHeight();
+
+        ValueAnimator animator = ValueAnimator.ofInt(initialHeight, 0);
+        animator.addUpdateListener(animation -> {
+            int animatedValue = (int) animation.getAnimatedValue();
+            view.getLayoutParams().height = animatedValue;
+            view.requestLayout();
+        });
+        animator.setDuration(300);
+        animator.start();
+
+        // When animation ends, set visibility to GONE
+        animator.addListener(new android.animation.AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(android.animation.Animator animation) {
+                view.setVisibility(View.GONE); // Hide after collapsing
+            }
+        });
     }
 }
