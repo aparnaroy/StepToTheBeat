@@ -28,6 +28,9 @@ public class AchievementsActivity extends BaseActivity{
         boolean runAchievementUnlockedComplete = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("run_achievement_unlocked_complete",false); //Triggered by pressing the end session button in ActiveSessionActivity.java
         boolean powerWalkAchievementUnlocked = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("power_walk_achievement_unlocked", false);
         boolean powerWalkAchievementComplete = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("power_walk_achievement_unlocked_complete", false);
+        boolean twentyOneDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("twentyone_day_achievement", false);
+        boolean fiftyDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("fifty_day_achievement", false);
+        boolean oneHundredDayAchievement = getSharedPreferences("achievements", MODE_PRIVATE).getBoolean("onehundred_day_achievement", false);
 
         //Checks for Walk for the first time achievement
         if (walkAchievementUnlocked && walkAchievementUnlockedComplete){
@@ -41,20 +44,47 @@ public class AchievementsActivity extends BaseActivity{
             TextView achievementText = (TextView) achievement2.getChildAt(0);
             achievementText.setText("Exercise for 1 hour in a single session!\nStatus: Unlocked!");
         }
+
+        //Checks for 14 day streak achievement
         if (fourteenDayAchievement) {
             LinearLayout achievement3 = findViewById(R.id.achievement3);
             TextView achievementText = (TextView) achievement3.getChildAt(0);
             achievementText.setText("Exercise for 14 days in a row!\nStatus: Unlocked!");
         }
+
+        //Checks for Run for the first time achievement
         if (runAchievementUnlocked && runAchievementUnlockedComplete) {
             LinearLayout achievement4 = findViewById(R.id.achievement4);
             TextView achievementText = (TextView) achievement4.getChildAt(0);
             achievementText.setText("Run with the app for the first time!\nStatus: Unlocked!");
         }
+
+        //Checks for Power Walk for the first time achievement
         if (powerWalkAchievementUnlocked && powerWalkAchievementComplete) {
             LinearLayout achievement5 = findViewById(R.id.achievement5);
             TextView achievementText = (TextView) achievement5.getChildAt(0);
             achievementText.setText("Power Walk with the app for the first time!\nStatus: Unlocked!");
+        }
+
+        //Checks for 21 day streak achievement
+        if (twentyOneDayAchievement) {
+            LinearLayout achievement6 = findViewById(R.id.achievement6);
+            TextView achievementText = (TextView) achievement6.getChildAt(0);
+            achievementText.setText("Exercise for 21 days in a row!\nStatus: Unlocked!");
+        }
+
+        //Checks for 50 day streak achievement
+        if (fiftyDayAchievement) {
+            LinearLayout achievement7 = findViewById(R.id.achievement7);
+            TextView achievementText = (TextView) achievement7.getChildAt(0);
+            achievementText.setText("Exercise for 50 days in a row!\nStatus: Unlocked!");
+        }
+
+        //Checks for 50 day streak achievement
+        if (oneHundredDayAchievement) {
+            LinearLayout achievement8 = findViewById(R.id.achievement8);
+            TextView achievementText = (TextView) achievement8.getChildAt(0);
+            achievementText.setText("Exercise for 100 days in a row!\nStatus: Unlocked!");
         }
 
     }

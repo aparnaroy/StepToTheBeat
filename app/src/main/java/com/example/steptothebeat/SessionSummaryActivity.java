@@ -30,8 +30,6 @@ public class SessionSummaryActivity extends BaseActivity {
         addMenuBarSpace(R.id.session_summary);
         setupToolbar(R.id.menubar, true);
 
-
-
         // Get session duration
         long duration = getSharedPreferences("session", MODE_PRIVATE)
                 .getLong("session_duration", 0);
@@ -197,6 +195,61 @@ public class SessionSummaryActivity extends BaseActivity {
                 if (!prefs.getBoolean("fourteen_day_banner_shown", false)) {
                     showAchievementBanner();
                     editor.putBoolean("fourteen_day_banner_shown", true);
+                    editor.apply();
+                }
+
+            }
+
+            // Check if 21-day achievement unlocked
+            else if (currentStreak >= 21 && !prefs.getBoolean("twentyone_day_achievement", false)) {
+                editor.putBoolean("twentyone_day_achievement", true);
+                editor.apply();
+
+                // Update achievement text
+                LinearLayout achievement6 = findViewById(R.id.achievement6);
+                TextView achievementText = (TextView) achievement6.getChildAt(0);
+                achievementText.setText("Exercise for 21 days in a row!\nStatus: Unlocked!");
+
+                // Show banner only if this is the first time unlocking
+                if (!prefs.getBoolean("twentyone_day_banner_shown", false)) {
+                    showAchievementBanner();
+                    editor.putBoolean("twentyone_day_banner_shown", true);
+                    editor.apply();
+                }
+            }
+
+            // Check if 50-day achievement unlocked
+            else if (currentStreak >= 50 && !prefs.getBoolean("fifty_day_achievement", false)) {
+                editor.putBoolean("fifty_day_achievement", true);
+                editor.apply();
+
+                // Update achievement text
+                LinearLayout achievement7 = findViewById(R.id.achievement6);
+                TextView achievementText = (TextView) achievement7.getChildAt(0);
+                achievementText.setText("Exercise for 21 days in a row!\nStatus: Unlocked!");
+
+                // Show banner only if this is the first time unlocking
+                if (!prefs.getBoolean("fifty_day_banner_shown", false)) {
+                    showAchievementBanner();
+                    editor.putBoolean("fifty_day_banner_shown", true);
+                    editor.apply();
+                }
+            }
+
+            // Check if 50-day achievement unlocked
+            else if (currentStreak >= 100 && !prefs.getBoolean("onehundred_day_achievement", false)) {
+                editor.putBoolean("onehundred_day_achievement", true);
+                editor.apply();
+
+                // Update achievement text
+                LinearLayout achievement7 = findViewById(R.id.achievement6);
+                TextView achievementText = (TextView) achievement7.getChildAt(0);
+                achievementText.setText("Exercise for 100 days in a row!\nStatus: Unlocked!");
+
+                // Show banner only if this is the first time unlocking
+                if (!prefs.getBoolean("onehundred_day_banner_shown", false)) {
+                    showAchievementBanner();
+                    editor.putBoolean("onehundred_day_banner_shown", true);
                     editor.apply();
                 }
             }
