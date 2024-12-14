@@ -80,8 +80,56 @@ public class ViewGeneratedPlaylist extends BaseActivity {
 
         // TEMPORARY TEXT TO BE REPLACED WITH SPOTIFY PLAYLIST NAME
         selectedPlaylistTextView.setText("The Playlist Name");
-
+        //playlist names
+        if (genre != null && pace != null) {
+            if (genre.equals("Pop") && pace.equals("Walk")) {
+                selectedPlaylistTextView.setText("100 BPM");
+            } else if (genre.equals("Pop") && pace.equals("Power Walk")) {
+                selectedPlaylistTextView.setText("100 BPM");
+            } else if (genre.equals("Pop") && pace.equals("Jog")) {
+                selectedPlaylistTextView.setText("130BPM pop-mix");
+            } else if (genre.equals("Pop") && pace.equals("Run")) {
+                selectedPlaylistTextView.setText("165 bpm POP");
+            } else if (genre.equals("Pop") && pace.equals("Sprint")) {
+                selectedPlaylistTextView.setText("165 bpm POP");
+            } else if (genre.equals("Rock") && pace.equals("Walk")) {
+                selectedPlaylistTextView.setText("100 BPM rock");
+            } else if (genre.equals("Rock") && pace.equals("Power Walk")) {
+                selectedPlaylistTextView.setText("100 BPM rock");
+            } else if (genre.equals("Rock") && pace.equals("Jog")) {
+                selectedPlaylistTextView.setText("130bpm rock");
+            } else if (genre.equals("Rock") && pace.equals("Run")) {
+                selectedPlaylistTextView.setText("160 BPM Rock Running");
+            } else if (genre.equals("Rock") && pace.equals("Sprint")) {
+                selectedPlaylistTextView.setText("160 BPM Rock Running");
+            } else if (genre.equals("Rap") && pace.equals("Walk")) {
+                selectedPlaylistTextView.setText("100 BPM+ Rap/HipHop");
+            } else if (genre.equals("Rap") && pace.equals("Power Walk")) {
+                selectedPlaylistTextView.setText("100 BPM+ Rap/HipHop");
+            } else if (genre.equals("Rap") && pace.equals("Jog")) {
+                selectedPlaylistTextView.setText("Rap/HipHop BPM 120-130");
+            } else if (genre.equals("Rap") && pace.equals("Run")) {
+                selectedPlaylistTextView.setText("170 BPM RAP");
+            } else if (genre.equals("Rap") && pace.equals("Sprint")) {
+                selectedPlaylistTextView.setText("170 BPM RAP");
+            }
+        } else if (genre.equals("Dubstep") && pace.equals("Walk")) {
+            selectedPlaylistTextView.setText("100 bpm EDM");
+        } else if (genre.equals("Dubstep") && pace.equals("Power Walk")) {
+            selectedPlaylistTextView.setText("100 bpm EDM");
+        } else if (genre.equals("Dubstep") && pace.equals("Jog")) {
+            selectedPlaylistTextView.setText("edm 130 bpm");
+        } else if (genre.equals("Dubstep") && pace.equals("Run")) {
+            selectedPlaylistTextView.setText("170 BPM Running EDM Mix");
+        } else if (genre.equals("Dubstep") && pace.equals("Sprint")) {
+            selectedPlaylistTextView.setText("170 BPM Running EDM Mix");
+        }
+        else{
+        // Default playlist if no match
+        selectedPlaylistTextView.setText("For you");// Default playlist's Name
+        }
     }
+
 
     @Override
     protected void onStart() {
@@ -220,21 +268,22 @@ public class ViewGeneratedPlaylist extends BaseActivity {
             } else if (genre.equals("Rap") && pace.equals("Sprint")) {
                 return "spotify:playlist:4lVrJcSHHKajwRtQjCIok7";  // Example Rock Sprint playlist URI
             }
-
-        } else if (genre.equals("Dubstep") && pace.equals("Walk")) {
-            return "spotify:playlist:7jEbBfCBmmS6T4YJNlElaz";  // Example Pop Walk playlist URI
-        } else if (genre.equals("Dubstep") && pace.equals("Power Walk")) {
-            return "spotify:playlist:7jEbBfCBmmS6T4YJNlElaz";  // Example Rock Sprint playlist URI
-        } else if (genre.equals("Dubstep") && pace.equals("Jog")) {
-            return "spotify:playlist:0NKuEOASOPZPZJXl101qRf";  // Example Rock Sprint playlist URI
-        } else if (genre.equals("Dubstep") && pace.equals("Run")) {
-            return "spotify:playlist:37i9dQZF1EIdFa1mD9SkGv";  // Example Rock Sprint playlist URI
-        } else if (genre.equals("Dubstep") && pace.equals("Sprint")) {
-            return "spotify:playlist:37i9dQZF1EIdFa1mD9SkGv";  // Example Rock Sprint playlist URI
+            else if (genre.equals("Dubstep") && pace.equals("Walk")) {
+                return "spotify:playlist:7jEbBfCBmmS6T4YJNlElaz";  // Example Pop Walk playlist URI
+            } else if (genre.equals("Dubstep") && pace.equals("Power Walk")) {
+                return "spotify:playlist:7jEbBfCBmmS6T4YJNlElaz";  // Example Rock Sprint playlist URI
+            } else if (genre.equals("Dubstep") && pace.equals("Jog")) {
+                return "spotify:playlist:0NKuEOASOPZPZJXl101qRf";  // Example Rock Sprint playlist URI
+            } else if (genre.equals("Dubstep") && pace.equals("Run")) {
+                return "spotify:playlist:37i9dQZF1EIdFa1mD9SkGv";  // Example Rock Sprint playlist URI
+            } else if (genre.equals("Dubstep") && pace.equals("Sprint")) {
+                return "spotify:playlist:37i9dQZF1EIdFa1mD9SkGv";  // Example Rock Sprint playlist URI
+            }
         }
 
         // Default playlist if no match
         return "spotify:playlist:37i9dQZF1DX2sUQwD7tbmL"; // Default playlist URI
+
     }
     public void startRun() {
 //        Toast.makeText(this, "inside start run", Toast.LENGTH_SHORT).show();
