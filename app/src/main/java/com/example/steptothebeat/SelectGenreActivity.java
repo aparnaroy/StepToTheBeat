@@ -13,9 +13,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class SelectGenreActivity extends BaseActivity {
-    public String[] dropdownOptions = {"Select One:","Pop","Rock","Rap","Dubstep"};
+    public String[] genreDropdownOptions = {"Select One: ", "Pop", "Rock", "Rap", "Dubstep"};
+    public String[] popularPicksDropdownOptions = {"Select One: ", "Top Hits", "2010's Pop", "80's Rock"};
     private RadioButton selectedButton = null;
-    private String dropDownSelection = null;
+    private String genreDropDownSelection = null;
+    private String popularPicksSelection = null;
     boolean dropdownInitialized = false;
 
     @Override
@@ -30,25 +32,28 @@ public class SelectGenreActivity extends BaseActivity {
 
         // Buttons and stuff
         Spinner genreDropdown = findViewById(R.id.genre_dropdown);
+        Spinner popularPicksDropdown = findViewById(R.id.popular_picks_dropdown); // New dropdown
         RadioButton genreButton = findViewById(R.id.genre_button);
-        RadioButton topHitsButton = findViewById(R.id.top_hits_button);
-        RadioButton popButton = findViewById(R.id.pop_button);
-        RadioButton rockButton = findViewById(R.id.rock_button);
+        RadioButton popularPicksButton = findViewById(R.id.popular_picks_button);
         RadioButton surpriseMeButton = findViewById(R.id.surprise_me_button);
         LinearLayout generatePlaylistButton = findViewById(R.id.generate_playlist);
 
+        genreButton.setChecked(false);
+        popularPicksButton.setChecked(false);
+        surpriseMeButton.setChecked(false);
 
-        // Display the activity type in a TextView (just for example)
-
-        // Dropdown options
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, dropdownOptions);
+        // Dropdown options for Genres
+        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, genreDropdownOptions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genreDropdown.setAdapter(adapter);
 
+        // Dropdown options for Popular Picks
+        ArrayAdapter<String> popularPicksAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, popularPicksDropdownOptions);
+        popularPicksAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        popularPicksDropdown.setAdapter(popularPicksAdapter);
+
         genreButton.setOnClickListener(view -> manageRadioButtons(genreButton));
-        topHitsButton.setOnClickListener(view -> manageRadioButtons(topHitsButton));
-        popButton.setOnClickListener(view -> manageRadioButtons(popButton));
-        rockButton.setOnClickListener(view -> manageRadioButtons(rockButton));
+        popularPicksButton.setOnClickListener(view -> manageRadioButtons(popularPicksButton));
         surpriseMeButton.setOnClickListener(view -> manageRadioButtons(surpriseMeButton));
 
         genreDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -58,44 +63,52 @@ public class SelectGenreActivity extends BaseActivity {
                     dropdownInitialized = true; // Mark as initialized
                     return; // Skip further execution
                 }
-                manageRadioButtons(genreButton);
+                // Check if the item selected is not the "Select One" option
+                if (position > 0) { // position 0 is "Select One: "
+                    manageRadioButtons(genreButton); // Only call after a valid selection
+                }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
 
+        popularPicksDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (!dropdownInitialized) {
+                    dropdownInitialized = true;
+                    return;
+                }
+                // Check if the item selected is not the "Select One" option
+                if (position > 0) { // position 0 is "Select One: "
+                    manageRadioButtons(popularPicksButton); // Only call after a valid selection
+                }
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
 
 
         generatePlaylistButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, ViewGeneratedPlaylist.class);
             String value = "";
-            dropDownSelection = genreDropdown.getSelectedItem().toString();
+            genreDropDownSelection = genreDropdown.getSelectedItem().toString();
+            popularPicksSelection = popularPicksDropdown.getSelectedItem().toString();
 
             if (selectedButton == genreButton) {
-                value = dropDownSelection;
-            }
-            else if (selectedButton == topHitsButton) {
-                value = "Todays Top Hits";
-            }
-            else if (selectedButton == popButton) {
-                value = "2010's Pop";
-            }
-            else if (selectedButton == rockButton) {
-                value = "80's Rock";
-            }
-            else {
+                value = genreDropDownSelection;
+            } else if (selectedButton == popularPicksButton) {
+                value = popularPicksSelection;
+            } else {
                 value = "Surprise Me";
             }
+
             intent.putExtra("genre", value); // Passing data
             intent.putExtra("pace", pace);
-//            intent.putExtra("genre", genreDropdown.getSelectedItem().toString());
             startActivity(intent);
         });
-
-
     }
+
     public void manageRadioButtons(RadioButton clickedRadioButton) {
         if (selectedButton != null && selectedButton != clickedRadioButton) {
             selectedButton.setChecked(false);
@@ -105,5 +118,4 @@ public class SelectGenreActivity extends BaseActivity {
             selectedButton.setChecked(true);
         }
     }
-
 }
