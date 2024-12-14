@@ -24,7 +24,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Toast.makeText(this, "inside on create", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "inside on create", Toast.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_generated_playlist);
         addMenuBarSpace(R.id.view_playlist);
@@ -38,7 +38,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
 
         // Set Listeners
         startRun.setOnClickListener(view -> startRun());
-        Toast.makeText(this, "After clicking start run", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "After clicking start run", Toast.LENGTH_SHORT).show();
 
         TextView selectedPlaylistTextView = findViewById(R.id.selected_playlist_text);
         TextView selectedGenreTextView = findViewById(R.id.selected_genre_text);
@@ -62,7 +62,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
 
     @Override
     protected void onStart() {
-        Toast.makeText(this, "inside on start", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "inside on start", Toast.LENGTH_SHORT).show();
 
         super.onStart();
         ConnectionParams connectionParams =
@@ -97,7 +97,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
     }
 
     private void connected() {
-        Toast.makeText(this, "inside connected", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "inside connected", Toast.LENGTH_SHORT).show();
 
         // Play a playlist
         String playlistUri = getPlaylistUriBasedOnSelection();
@@ -156,7 +156,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
                 })
                 .setErrorCallback(throwable -> Log.e("ViewGeneratedPlaylist", "Failed to subscribe to PlayerState", throwable));
 
-        Toast.makeText(this, "After spotify app remote stuff", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "After spotify app remote stuff", Toast.LENGTH_SHORT).show();
     }
 
     private String getPlaylistUriBasedOnSelection() {
@@ -214,8 +214,13 @@ public class ViewGeneratedPlaylist extends BaseActivity {
         return "spotify:playlist:37i9dQZF1DX2sUQwD7tbmL"; // Default playlist URI
     }
     public void startRun() {
-        Toast.makeText(this, "inside start run", Toast.LENGTH_SHORT).show();
-        connected();
+//        Toast.makeText(this, "inside start run", Toast.LENGTH_SHORT).show();
+        if (mSpotifyAppRemote != null && mSpotifyAppRemote.isConnected()) {
+            connected();
+        } else {
+            Toast.makeText(this, "Spotify is not connected yet. Please wait...", Toast.LENGTH_SHORT).show();
+            Log.e("ViewGeneratedPlaylist", "SpotifyAppRemote is not connected.");
+        }
     }
 
 }
