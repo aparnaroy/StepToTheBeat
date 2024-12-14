@@ -26,6 +26,7 @@
         android:text="Achievements"
         android:fontFamily="@font/poller_one"
         android:textStyle="bold"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:textSize="30sp"/>
 
@@ -38,7 +39,7 @@
         android:src="@drawable/trophy"
         android:contentDescription="Achievements"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:scaleType="centerInside"
         android:background="@android:color/transparent"
         android:layout_gravity="center" /> <!-- This centers the button horizontally -->
