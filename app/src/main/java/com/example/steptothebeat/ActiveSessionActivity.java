@@ -32,7 +32,6 @@ public class ActiveSessionActivity extends BaseActivity {
         String trackName = getIntent().getStringExtra("track");
         String artistName = getIntent().getStringExtra("artist");
 
-
         // Set up toolbar
         setupToolbar(R.id.menubar, true);
 
