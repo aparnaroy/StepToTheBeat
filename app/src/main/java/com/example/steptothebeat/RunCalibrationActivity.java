@@ -53,6 +53,20 @@ public class RunCalibrationActivity extends BaseActivity {
     }
 
     void initializeButtons() {
+        // Toggle expanded view for calibration info box
+        LinearLayout infoCollapsed = findViewById(R.id.infoCollapsed);
+        LinearLayout infoExpanded = findViewById(R.id.infoExpanded);
+
+        infoCollapsed.setOnClickListener(view -> {
+            if (infoExpanded.getVisibility() == View.GONE) {
+                // Expand
+                infoExpanded.setVisibility(View.VISIBLE);
+            } else {
+                // Collapse
+                infoExpanded.setVisibility(View.GONE);
+            }
+        });
+
         LinearLayout startCalibrationButton = findViewById(R.id.startCalibrationButton);
         progressBar = findViewById(R.id.progressBarRun);
 
