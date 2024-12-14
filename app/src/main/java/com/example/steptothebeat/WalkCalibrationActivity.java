@@ -1,5 +1,6 @@
 package com.example.steptothebeat;
 
+import android.animation.ValueAnimator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -63,11 +64,11 @@ public class WalkCalibrationActivity extends BaseActivity {
 
         infoCollapsed.setOnClickListener(view -> {
             if (infoExpanded.getVisibility() == View.GONE) {
-                // Expand
-                infoExpanded.setVisibility(View.VISIBLE);
+                // Expand with animation
+                expandView(infoExpanded);
             } else {
-                // Collapse
-                infoExpanded.setVisibility(View.GONE);
+                // Collapse with animation
+                collapseView(infoExpanded);
             }
         });
 
@@ -278,5 +279,45 @@ public class WalkCalibrationActivity extends BaseActivity {
         if (sensorManager != null && accelerometerListener != null) {
             sensorManager.unregisterListener(accelerometerListener);
         }
+    }
+
+
+    // Smoothly expand info box
+    private void expandView(View view) {
+        view.setVisibility(View.VISIBLE);
+
+        int targetHeight = (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, 450, getResources().getDisplayMetrics());
+
+        ValueAnimator animator = ValueAnimator.ofInt(0, targetHeight);
+        animator.addUpdateListener(animation -> {
+            int animatedValue = (int) animation.getAnimatedValue();
+            view.getLayoutParams().height = animatedValue;
+            view.requestLayout();
+        });
+        animator.setDuration(300);
+        animator.start();
+    }
+
+    // Smoothly collapse info box
+    private void collapseView(View view) {
+        int initialHeight = view.getMeasuredHeight();
+
+        ValueAnimator animator = ValueAnimator.ofInt(initialHeight, 0);
+        animator.addUpdateListener(animation -> {
+            int animatedValue = (int) animation.getAnimatedValue();
+            view.getLayoutParams().height = animatedValue;
+            view.requestLayout();
+        });
+        animator.setDuration(300);
+        animator.start();
+
+        // When animation ends, set visibility to GONE
+        animator.addListener(new android.animation.AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(android.animation.Animator animation) {
+                view.setVisibility(View.GONE); // Hide after collapsing
+            }
+        });
     }
 }
