@@ -149,7 +149,7 @@
         android:id="@+id/start_run_card"
         android:layout_width="390dp"
         android:layout_height="95dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="65dp"
         app:cardElevation="5dp"
         app:cardCornerRadius="10dp"
         app:cardBackgroundColor="@android:color/transparent"

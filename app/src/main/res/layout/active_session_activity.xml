@@ -60,35 +60,40 @@
         android:id="@+id/end_session"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="524dp"
+        android:layout_marginTop="287dp"
         android:background="@android:color/transparent"
         android:contentDescription="StopButton"
         android:scaleType="centerInside"
         android:src="@drawable/stop_button"
+        app:layout_constraintBottom_toTopOf="@+id/exercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/heartbeaticon"
+        app:layout_constraintVertical_bias="0.003" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/heartbeaticon"
         android:layout_width="231dp"
         android:layout_height="247dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="256dp"
         android:background="@android:color/transparent"
         android:contentDescription="HeartbeatIcon"
         android:scaleType="centerInside"
         android:src="@drawable/heartbeat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.302" />
 
     <TextView
         android:id="@+id/exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="560dp"
-        android:text="Exercise: "
+        android:layout_marginTop="500dp"
         android:fontFamily="@font/orbitron"
+        android:text="Exercise: "
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="italic"
@@ -100,9 +105,9 @@
         android:id="@+id/tempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="585dp"
-        android:text="143 BPM"
+        android:layout_marginTop="524dp"
         android:fontFamily="@font/poller_one"
+        android:text="143 BPM"
         android:textColor="#000000"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,15 +118,15 @@
         android:id="@+id/current_track"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="684dp"
-        android:text="Now Playing: "
+        android:layout_marginTop="624dp"
         android:fontFamily="@font/orbitron"
+        android:text="Now Playing: "
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menubar" />
 
@@ -131,16 +136,32 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
-        android:text="Artist: "
         android:fontFamily="@font/orbitron"
-        android:textSize="16sp"
+        android:text="Artist: "
         android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/current_track"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.073" />
+
+    <TextView
+        android:id="@+id/current_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/orbitron"
+        android:text="Playlist: "
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menubar"
+        app:layout_constraintVertical_bias="0.115" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
