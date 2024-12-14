@@ -21,8 +21,8 @@ public class AchievementsActivity extends BaseActivity{
         addMenuBarSpace(R.id.achievements);
 
         boolean walkAchievementUnlocked = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("walk_achievement_unlocked",false); //Walk achievement unlock
-        boolean walkAchievementUnlockedComplete = getSharedPreferences("achievements",MODE_PRIVATE).getBoolean("walk_achievement_unlocked_complete",false); //Triggered by pressing the end session button in ActiveSessionActivity.java
-        if (walkAchievementUnlocked && walkAchievementUnlockedComplete){
+
+        if (walkAchievementUnlocked){
             LinearLayout achievement1 = findViewById(R.id.achievement1);
             TextView achievementText = (TextView) achievement1.getChildAt(0);
             achievementText.setText("Walk with the app for the first time!\nStatus: Unlocked!");
