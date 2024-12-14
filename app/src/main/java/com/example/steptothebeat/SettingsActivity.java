@@ -16,15 +16,11 @@ public class SettingsActivity extends BaseActivity {
     }
 
     void initializeButtons() {
-        // Setup the button clicks
+        // Set up the button clicks
         Button accountInfoButton = findViewById(R.id.account_information);
         Button profileButton = findViewById(R.id.profile);
         Button runningHistoryButton = findViewById(R.id.running_history);
         Button calibrationButton = findViewById(R.id.calibration);
-        Button accountInfoArrowButton = findViewById(R.id.account_info_arrow);
-        Button profileArrowButton = findViewById(R.id.profile_arrow);
-        Button runningHistoryArrowButton = findViewById(R.id.running_history_arrow);
-        Button calibrationArrowButton = findViewById(R.id.calibration_arrow);
 
 //        accountInfoButton.setOnClickListener(v -> {
 //            // Navigate to Account Information Activity
@@ -33,12 +29,6 @@ public class SettingsActivity extends BaseActivity {
 //        });
 
         profileButton.setOnClickListener(v -> {
-            // Navigate to Profile Activity
-            Intent intent = new Intent(SettingsActivity.this, ProfileActivity.class);
-            startActivity(intent);
-        });
-
-        profileArrowButton.setOnClickListener(v -> {
             // Navigate to Profile Activity
             Intent intent = new Intent(SettingsActivity.this, ProfileActivity.class);
             startActivity(intent);

@@ -39,10 +39,6 @@ public class SelectGenreActivity extends BaseActivity {
 
 
         // Display the activity type in a TextView (just for example)
-        TextView selectedActivityTextView = findViewById(R.id.selected_pace_text);
-        if (pace != null) {
-            selectedActivityTextView.setText("Selected: " + pace);
-        }
 
         // Dropdown options
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, dropdownOptions);
@@ -92,9 +88,9 @@ public class SelectGenreActivity extends BaseActivity {
             else {
                 value = "Surprise Me";
             }
-            intent.putExtra("playlist", value); // Passing data
+            intent.putExtra("genre", value); // Passing data
             intent.putExtra("pace", pace);
-            intent.putExtra("genre", genreDropdown.getSelectedItem().toString());
+//            intent.putExtra("genre", genreDropdown.getSelectedItem().toString());
             startActivity(intent);
         });
 

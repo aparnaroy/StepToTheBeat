@@ -73,6 +73,7 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:padding="16dp"
+        android:elevation="8dp"
         app:layout_constraintTop_toBottomOf="@id/instructionText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,12 +84,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="WALK  for 30 seconds"
-            android:fontFamily="@font/orbitron"
+            android:fontFamily="@font/sniglet"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="32sp"
             android:textColor="#000000"
             android:gravity="center" />
-
     </LinearLayout>
 
     <!-- Button Container -->
@@ -107,6 +107,7 @@
             android:layout_width="350dp"
             android:layout_height="105dp"
             android:background="@drawable/button_blue"
+            android:elevation="8dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="8dp"
@@ -139,6 +140,116 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+    </LinearLayout>
+
+
+    <!-- Bottom White Box with Info Icon and Expandable Content -->
+    <LinearLayout
+        android:id="@+id/calibrationInfoBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="16dp"
+        android:background="@drawable/white_box"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Collapsed Section: Title and Info Icon -->
+        <LinearLayout
+            android:id="@+id/infoCollapsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Info Box Title Text -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="What is Calibration?"
+                android:paddingLeft="15dp"
+                android:fontFamily="@font/sniglet"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <!-- Info Icon -->
+            <ImageView
+                android:id="@+id/infoIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/info"
+                android:contentDescription="Info Icon" />
+        </LinearLayout>
+
+        <!-- Expanded Section: Additional Info (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/infoExpanded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All you have to do is follow the instructions so we can calculate what your average speed is in steps per minute."
+                android:fontFamily="@font/sniglet"
+                android:textSize="20sp"
+                android:layout_marginBottom="28dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How are my steps tracked?"
+                android:fontFamily="@font/sniglet"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We use your device's accelerometer to detect your steps as you move during calibration."
+                android:fontFamily="@font/sniglet"
+                android:textSize="20sp"
+                android:layout_marginBottom="28dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Why should I calibrate?"
+                android:fontFamily="@font/sniglet"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By calibrating, you allow us to generate playlists that better match your speed so you can walk/run at a pace that is just right for you!"
+                android:fontFamily="@font/sniglet"
+                android:textSize="20sp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
