@@ -33,20 +33,18 @@
             android:textSize="45sp"
             android:textStyle="bold"
             android:layout_gravity="start"
-            android:paddingTop="30dp"
+            android:paddingTop="40dp"
             android:paddingBottom="16dp"
             android:paddingStart="36dp"
             android:textColor="#333" />
 
-        <!-- Settings Button -->
-
-        <!-- Account Information Option -->
+        <!-- Settings Circle Icon -->
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/settingsButton"
             android:transitionName="settings"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:layout_marginStart="20dp"
             android:background="@android:color/transparent"
             android:contentDescription="Settings"
@@ -56,38 +54,29 @@
             app:layout_constraintTop_toBottomOf="parent" />
     </LinearLayout>
 
+    <!-- Account Information Option -->
     <LinearLayout
         android:id="@+id/account_information_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingTop="10dp"
+        android:paddingTop="25dp"
         android:paddingStart="33dp"
-        android:paddingEnd="12dp"
+        android:paddingEnd="33dp"
         android:layout_marginBottom="10dp">
         <Button
             android:id="@+id/account_information"
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Account Information"
+            android:text="Account Information          \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
             android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
-        <Button
-            android:id="@+id/account_info_arrow"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\u203A"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:paddingStart="8dp"/>
     </LinearLayout>
 
     <!-- Profile Option -->
@@ -97,32 +86,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingStart="33dp"
-        android:paddingEnd="12dp"
+        android:paddingEnd="33dp"
         android:layout_marginBottom="10dp">
         <Button
             android:id="@+id/profile"
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Profile"
+            android:text="Profile                                       \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
             android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
-        <Button
-            android:id="@+id/profile_arrow"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\u203A"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:paddingStart="8dp"/>
     </LinearLayout>
 
     <!-- Running History Option -->
@@ -132,32 +111,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="?android:attr/selectableItemBackground"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingStart="33dp"
-        android:paddingEnd="12dp"
+        android:paddingEnd="33dp"
         android:layout_marginBottom="10dp">
         <Button
             android:id="@+id/running_history"
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Running History"
+            android:text="Running History                    \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
             android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
-        <Button
-            android:id="@+id/running_history_arrow"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\u203A"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:paddingStart="8dp"/>
     </LinearLayout>
 
     <!-- Calibration Option -->
@@ -166,9 +135,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="5dp"
+        android:paddingTop="10dp"
         android:paddingStart="33dp"
-        android:paddingEnd="12dp"
+        android:paddingEnd="33dp"
         android:background="?android:attr/selectableItemBackground"
         android:layout_marginBottom="10dp">
         <Button
@@ -176,23 +145,12 @@
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Calibration"
+            android:text="Calibration                             \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
             android:textColor="@color/black"
             android:gravity="start"
             android:layout_weight="1"/>
-        <Button
-            android:id="@+id/calibration_arrow"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="\u203A"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:paddingStart="8dp"/>
     </LinearLayout>
-
 </LinearLayout>
