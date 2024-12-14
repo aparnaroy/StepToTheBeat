@@ -62,7 +62,7 @@
             android:orientation="vertical"
             android:spacing="8dp">
 
-            <!-- Achievement Item -->
+            <!-- Achievement 1 -->
             <LinearLayout
                 android:id="@+id/achievement1"
                 android:layout_width="match_parent"
@@ -77,13 +77,14 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
+                    android:textStyle="bold"
                     android:text="Walk with the app for the first time!\nStatus: Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp"/>
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
@@ -96,23 +97,27 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/blue"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
+                    android:textStyle="bold"
                     android:text="Exercise for 1 hour in a single session!\nStatus:Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
+
+            <!-- Achievement 3 -->
 
             <LinearLayout
                 android:id="@+id/achievement3"
@@ -121,23 +126,27 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/blue"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
+                    android:textStyle="bold"
                     android:text="Exercise for 14 days in a row!\nStatus:Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
+
+            <!-- Achievement 4 -->
 
             <LinearLayout
                 android:id="@+id/achievement4"
@@ -146,23 +155,27 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/blue"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
-                    android:text="Match the best for greater than 85% of the session!\nStatus: Locked"
+                    android:textStyle="bold"
+                    android:text="Run with the app for the first time!\nStatus: Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
+
+            <!-- Achievement 5 -->
 
             <LinearLayout
                 android:id="@+id/achievement5"
@@ -171,23 +184,27 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/blue"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
-                    android:text="Get a perfect score!\nStatus: Locked"
+                    android:textStyle="bold"
+                    android:text="Power walk with the app for the first time!\nStatus: Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
+
+            <!-- Achievement 6 -->
 
             <LinearLayout
                 android:id="@+id/achievement6"
@@ -196,23 +213,27 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/blue"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
+                    android:textStyle="bold"
                     android:text="Exercise for 21 days in a row!\nStatus: Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
+
+            <!-- Achievement 7 -->
 
             <LinearLayout
                 android:id="@+id/achievement7"
@@ -221,7 +242,8 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/blue"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
@@ -229,16 +251,18 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
                     android:textStyle="bold"
-                    android:text="Exercise for 50 days in a row!\n Status: Locked"
+                    android:text="Exercise for 50 days in a row!\nStatus: Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
+
+            <!-- Achievement 8 -->
 
             <LinearLayout
                 android:id="@+id/achievement8"
@@ -247,20 +271,22 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/blue"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
+                    android:textStyle="bold"
                     android:text="Exercise for 100 days in a row!\nStatus:Locked"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
                     android:contentDescription="Trophy Icon"
                     android:src="@drawable/trophy" />
             </LinearLayout>
