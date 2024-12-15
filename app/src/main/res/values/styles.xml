@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomAlertDialog" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="android:textColorPrimary">#FF000000</item>
+        <item name="android:fontFamily">@font/sniglet</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/CustomButton</item>
+    </style>
+
+    <style name="CustomButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">#FF000000</item>
+    </style>
+
+</resources>

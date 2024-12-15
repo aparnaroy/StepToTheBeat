@@ -23,6 +23,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
     private SpotifyAppRemote mSpotifyAppRemote;
     private static final String CLIENT_ID = "57f00fa0bc2d45348bcd7857291e35c9";
     private static final String REDIRECT_URI = "https://open.spotify.com/";
+    String pace = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
 
         // Get selected pace and genre
         String genre = getIntent().getStringExtra("genre");
-        String pace = getIntent().getStringExtra("pace");
+        pace = getIntent().getStringExtra("pace");
 
         // Get saved steps per minute for walk and run
         SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
@@ -205,6 +206,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
                                     intent.putExtra("track", track.name);
                                     intent.putExtra("artist", track.artist.name);
                                     intent.putExtra("playlist", playlistName);
+                                    intent.putExtra("selected_bpm", pace);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
                                     // Set a new Runnable to be executed after 10 seconds

@@ -63,14 +63,22 @@
         android:background="?android:attr/selectableItemBackground"
         android:paddingTop="25dp"
         android:paddingStart="33dp"
-        android:paddingEnd="33dp"
+        android:paddingEnd="20dp"
         android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/info"
+            android:layout_marginTop="5dp"/>
+
         <Button
             android:id="@+id/account_information"
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Account Information          \u203A"
+            android:text="Account Information      \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
@@ -88,14 +96,22 @@
         android:background="?android:attr/selectableItemBackground"
         android:paddingTop="10dp"
         android:paddingStart="33dp"
-        android:paddingEnd="33dp"
+        android:paddingEnd="20dp"
         android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:srcCompat="@drawable/profile"
+            android:layout_marginTop="5dp"/>
+
         <Button
             android:id="@+id/profile"
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Profile                                       \u203A"
+            android:text="Profile                                   \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
@@ -113,14 +129,22 @@
         android:background="?android:attr/selectableItemBackground"
         android:paddingTop="10dp"
         android:paddingStart="33dp"
-        android:paddingEnd="33dp"
+        android:paddingEnd="20dp"
         android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/running_history"
+            android:layout_marginTop="5dp"/>
+
         <Button
             android:id="@+id/running_history"
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Running History                    \u203A"
+            android:text="Running History                \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
@@ -137,15 +161,23 @@
         android:orientation="horizontal"
         android:paddingTop="10dp"
         android:paddingStart="33dp"
-        android:paddingEnd="33dp"
+        android:paddingEnd="20dp"
         android:background="?android:attr/selectableItemBackground"
         android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/calibration"
+            android:layout_marginTop="5dp"/>
+
         <Button
             android:id="@+id/calibration"
             android:background="?android:attr/selectableItemBackground"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Calibration                             \u203A"
+            android:text="Calibration                         \u203A"
             android:fontFamily="@font/sniglet"
             android:textStyle="bold"
             android:textSize="28sp"
