@@ -21,7 +21,7 @@
         android:fontFamily="@font/sniglet"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
-        android:text="If this is your first time joining us, be sure to check out our calibration activity in Settings > Calibration."
+        android:text="If this is your first time joining us, be sure to calibrate the app to your speed in Settings > Calibration."
         android:textColor="@color/black"
         android:textSize="22sp"
         android:gravity="center"
