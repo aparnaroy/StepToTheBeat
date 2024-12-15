@@ -118,23 +118,23 @@ public class ActiveSessionActivity extends BaseActivity {
         int walk_spm = sharedPreferences.getInt("walk_spm", -1);
         int run_spm = sharedPreferences.getInt("run_spm", -1);
 
-        if (pace.equals("Walk") && walk_spm != -1) {
+        if ("Walk".equals(pace) && walk_spm != -1) {
             tempoTextView.setText(walk_spm + " BPM");
-        } else if (pace.equals("Run") && run_spm != -1) {
+        } else if ("Run".equals(pace) && run_spm != -1) {
             tempoTextView.setText(run_spm + " BPM");
-        } else if (pace.equals("Walk")) {
+        } else if ("Walk".equals(pace)) {
             randomTempo = random.nextInt(31) + 90;
             tempoTextView.setText(randomTempo + " BPM");
-        } else if (pace.equals("Power Walk")) {
+        } else if ("Power Walk".equals(pace)) {
             randomTempo = random.nextInt(16) + 120;
             tempoTextView.setText(randomTempo + " BPM");
-        } else if (pace.equals("Jog")) {
+        } else if ("Jog".equals(pace)) {
             randomTempo = random.nextInt(21) + 130;
             tempoTextView.setText(randomTempo + " BPM");
-        } else if (pace.equals("Run")) {
+        } else if ("Run".equals(pace)) {
             randomTempo = random.nextInt(31) + 150;
             tempoTextView.setText(randomTempo + " BPM");
-        } else if (pace.equals("Sprint")) {
+        } else if ("Sprint".equals(pace)) {
             randomTempo = random.nextInt(41) + 180;
             tempoTextView.setText(randomTempo + " BPM");
         }
