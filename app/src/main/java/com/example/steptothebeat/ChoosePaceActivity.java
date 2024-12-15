@@ -32,6 +32,7 @@ public class ChoosePaceActivity extends BaseActivity {
 
         // Power Walk Button
         powerWalkButton.setOnClickListener(v -> {
+            getSharedPreferences("achievements", MODE_PRIVATE).edit().putBoolean("power_walk_achievement_unlocked",true).apply();
             Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
             intent.putExtra("pace", "Power Walk"); // Passing data
             startActivity(intent);
@@ -46,6 +47,7 @@ public class ChoosePaceActivity extends BaseActivity {
 
         // Run Button
         runButton.setOnClickListener(v -> {
+            getSharedPreferences("achievements", MODE_PRIVATE).edit().putBoolean("run_achievement_unlocked",true).apply();
             Intent intent = new Intent(ChoosePaceActivity.this, SelectGenreActivity.class);
             intent.putExtra("pace", "Run"); // Passing data
             startActivity(intent);
