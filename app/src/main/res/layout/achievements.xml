@@ -54,7 +54,8 @@
 
     <!-- Achievements List -->
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="425dp"
+        android:layout_gravity="center"
         android:layout_height="577dp"
         android:layout_weight="1">
 
@@ -70,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp">
 
@@ -97,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:layout_marginTop="10dp">
@@ -108,7 +109,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
                     android:textStyle="bold"
-                    android:text="Exercise for 1 hour in a single session!\nStatus:Locked"
+                    android:text="Exercise for 1 hour in a single session!\nStatus: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -126,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:layout_marginTop="10dp">
@@ -137,7 +138,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
                     android:textStyle="bold"
-                    android:text="Exercise for 14 days in a row!\nStatus:Locked"
+                    android:text="Exercise for 14 days in a row!\nStatus: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -155,7 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:layout_marginTop="10dp">
@@ -184,7 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:layout_marginTop="10dp">
@@ -213,7 +214,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:layout_marginTop="10dp">
@@ -242,7 +243,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:layout_marginTop="10dp">
@@ -271,7 +272,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:background="@color/blue"
+                android:background="@color/darkerBlue"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:layout_marginTop="10dp">
@@ -282,7 +283,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/orbitron"
                     android:textStyle="bold"
-                    android:text="Exercise for 100 days in a row!\nStatus:Locked"
+                    android:text="Exercise for 100 days in a row!\nStatus: Locked"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
