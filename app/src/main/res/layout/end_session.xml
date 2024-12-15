@@ -71,7 +71,7 @@
         android:layout_marginTop="42dp"
         android:text="Duration: 00:00:00"
         android:fontFamily="@font/poller_one"
-        android:textSize="25sp"
+        android:textSize="28sp"
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/checkmark_image"
         app:layout_constraintStart_toStartOf="parent"
