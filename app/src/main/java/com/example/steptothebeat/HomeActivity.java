@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
 
         boolean showCalibrationInstructions = getSharedPreferences("calibrationInfo",MODE_PRIVATE).getBoolean("showCalibrationInstructions",true);
 
-        if (!showCalibrationInstructions) {
+        if (showCalibrationInstructions) {
             showDialog();
         }
 
