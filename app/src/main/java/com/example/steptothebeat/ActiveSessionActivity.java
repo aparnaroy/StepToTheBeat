@@ -23,11 +23,10 @@ import android.content.SharedPreferences;
 public class ActiveSessionActivity extends BaseActivity {
 
     private ImageButton endSessionButton;
-    private TextView currentTrackTextView, currentArtistTextView;
+    private TextView currentTrackTextView, currentArtistTextView, tempoTextView, timerTextView;
     private Handler timerHandler = new Handler(Looper.getMainLooper());
     private long startTime = 0L;
     private long elapsedTime = 0L;
-    private TextView timerTextView;
 
     private Runnable timerRunnable = new Runnable() {
         @Override
@@ -107,6 +106,9 @@ public class ActiveSessionActivity extends BaseActivity {
         currentTrackTextView = findViewById(R.id.current_track);  // Make sure the IDs match
         currentArtistTextView = findViewById(R.id.current_artist);
         timerTextView = findViewById(R.id.timer_text);
+        tempoTextView = findViewById(R.id.tempo);
+
+        tempoTextView.setText("120 BPM"); // TODO: CHANGE THIS TO BE THE SELECTED PACE BPM
 
         //Start the timer
         startTime = System.currentTimeMillis();

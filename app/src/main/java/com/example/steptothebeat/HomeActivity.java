@@ -39,15 +39,13 @@ public class HomeActivity extends AppCompatActivity {
 
         init();
 
-        boolean showCallibrationInstructions = getSharedPreferences("callibrationInfo",MODE_PRIVATE).getBoolean("showCallibrationInstructions",true);
+        boolean showCalibrationInstructions = getSharedPreferences("calibrationInfo",MODE_PRIVATE).getBoolean("showCalibrationInstructions",true);
 
-        if (showCallibrationInstructions) {
+        if (showCalibrationInstructions) {
             showDialog();
         }
 
     }
-
-
 
 
     private void showDialog() {
@@ -102,17 +100,17 @@ public class HomeActivity extends AppCompatActivity {
                     ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(currentA, profileView, "profile");
                     startActivity(intent, options.toBundle());
-                    getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                    getSharedPreferences("calibrationInfo", MODE_PRIVATE)
                             .edit()
-                            .putBoolean("showCallibrationInstructions", false)
+                            .putBoolean("showCalibrationInstructions", false)
                             .apply();
                 }
                 else {
                     getWindow().setExitTransition(new Explode());
                     startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(currentA).toBundle());
-                    getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                    getSharedPreferences("calibrationInfo", MODE_PRIVATE)
                             .edit()
-                            .putBoolean("showCallibrationInstructions", false)
+                            .putBoolean("showCalibrationInstructions", false)
                             .apply();
                 }
                 //startActivity(intent);
@@ -129,9 +127,9 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, settingsView, "settings");
                 startActivity(intent, options.toBundle());
-                getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                getSharedPreferences("calibrationInfo", MODE_PRIVATE)
                         .edit()
-                        .putBoolean("showCallibrationInstructions", false)
+                        .putBoolean("showCalibrationInstructions", false)
                         .apply();
                 //startActivity(intent);
             }
@@ -146,9 +144,9 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, startView, "start");
                 startActivity(intent, options.toBundle());
-                getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                getSharedPreferences("calibrationInfo", MODE_PRIVATE)
                         .edit()
-                        .putBoolean("showCallibrationInstructions", false)
+                        .putBoolean("showCalibrationInstructions", false)
                         .apply();
                 //startActivity(intent);
             }
@@ -163,9 +161,9 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, achievementsView, "achievements");
                 startActivity(intent, options.toBundle());
-                getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                getSharedPreferences("calibrationInfo", MODE_PRIVATE)
                         .edit()
-                        .putBoolean("showCallibrationInstructions", false)
+                        .putBoolean("showCalibrationInstructions", false)
                         .apply();
                 //startActivity(intent);
             }
