@@ -139,8 +139,6 @@ public class ActiveSessionActivity extends BaseActivity {
             tempoTextView.setText(randomTempo + " BPM");
         }
 
-        tempoTextView.setText("120 BPM"); // TODO: CHANGE THIS TO BE THE SELECTED PACE BPM
-
         //Start the timer
         startTime = System.currentTimeMillis();
         timerHandler.postDelayed(timerRunnable, 0);
