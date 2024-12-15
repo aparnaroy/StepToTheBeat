@@ -43,27 +43,37 @@
         android:id="@+id/exampleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="162dp"
         android:text="Workout session complete!"
         android:fontFamily="@font/poller_one"
         android:textAlignment="center"
-        android:textSize="60sp"
+        android:textSize="50sp"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menubar" />
 
+    <ImageView
+        android:id="@+id/checkmark_image"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/checkmark"
+        app:layout_constraintTop_toBottomOf="@id/exampleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/duration_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="42dp"
         android:text="Duration: 00:00:00"
         android:fontFamily="@font/poller_one"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textColor="#000000"
-        app:layout_constraintTop_toBottomOf="@id/exampleText"
+        app:layout_constraintTop_toBottomOf="@id/checkmark_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
