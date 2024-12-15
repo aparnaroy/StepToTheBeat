@@ -19,6 +19,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import android.content.SharedPreferences;
+import java.util.Random;
+
 
 public class ActiveSessionActivity extends BaseActivity {
 
@@ -27,6 +29,7 @@ public class ActiveSessionActivity extends BaseActivity {
     private Handler timerHandler = new Handler(Looper.getMainLooper());
     private long startTime = 0L;
     private long elapsedTime = 0L;
+    int randomTempo = 0;
 
     private Runnable timerRunnable = new Runnable() {
         @Override
@@ -108,6 +111,34 @@ public class ActiveSessionActivity extends BaseActivity {
         timerTextView = findViewById(R.id.timer_text);
         tempoTextView = findViewById(R.id.tempo);
 
+        Random random = new Random();
+
+        String pace = getIntent().getStringExtra("pace");
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
+        int walk_spm = sharedPreferences.getInt("walk_spm", -1);
+        int run_spm = sharedPreferences.getInt("run_spm", -1);
+
+        if (pace.equals("Walk") && walk_spm != -1) {
+            tempoTextView.setText(walk_spm + " BPM");
+        } else if (pace.equals("Run") && run_spm != -1) {
+            tempoTextView.setText(run_spm + " BPM");
+        } else if (pace.equals("Walk")) {
+            randomTempo = random.nextInt(31) + 90;
+            tempoTextView.setText(randomTempo + " BPM");
+        } else if (pace.equals("Power Walk")) {
+            randomTempo = random.nextInt(16) + 120;
+            tempoTextView.setText(randomTempo + " BPM");
+        } else if (pace.equals("Jog")) {
+            randomTempo = random.nextInt(21) + 130;
+            tempoTextView.setText(randomTempo + " BPM");
+        } else if (pace.equals("Run")) {
+            randomTempo = random.nextInt(31) + 150;
+            tempoTextView.setText(randomTempo + " BPM");
+        } else if (pace.equals("Sprint")) {
+            randomTempo = random.nextInt(41) + 180;
+            tempoTextView.setText(randomTempo + " BPM");
+        }
+
         tempoTextView.setText("120 BPM"); // TODO: CHANGE THIS TO BE THE SELECTED PACE BPM
 
         //Start the timer
@@ -123,8 +154,6 @@ public class ActiveSessionActivity extends BaseActivity {
 
         EdgeToEdge.enable(this);
 
-        // Get the activity type passed from the ChoosePaceActivity
-        String pace = getIntent().getStringExtra("pace");
         // Display the activity type in a TextView (just for example)
         TextView selectedActivityTextView = findViewById(R.id.exercise);
         if (pace != null) {
