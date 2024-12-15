@@ -16,7 +16,7 @@ import androidx.activity.EdgeToEdge;
 public class ActiveSessionActivity extends BaseActivity {
 
     private ImageButton endSessionButton;
-    private TextView currentTrackTextView, currentArtistTextView;
+    private TextView currentTrackTextView, currentArtistTextView, tempoTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,9 @@ public class ActiveSessionActivity extends BaseActivity {
         // Initialize the TextViews
         currentTrackTextView = findViewById(R.id.current_track);  // Make sure the IDs match
         currentArtistTextView = findViewById(R.id.current_artist);
+        tempoTextView = findViewById(R.id.tempo);
+
+        tempoTextView.setText("120 BPM"); // TODO: CHANGE THIS TO BE THE SELECTED PACE BPM
 
         // Get the track and artist from the Intent
         String trackName = getIntent().getStringExtra("track");
