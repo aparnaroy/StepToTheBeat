@@ -30,7 +30,6 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView profileButton;
     private AnimatorSet profileButtonAnimatorSet, settingsButtonAnimatorSet, startWorkoutButtonAnimatorSet, achievementsButtonAnimatorSet;
 
-    private boolean showCallibrationInstructions = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +38,12 @@ public class HomeActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
 
         init();
+
+        boolean showCallibrationInstructions = getSharedPreferences("callibrationInfo",MODE_PRIVATE).getBoolean("showCallibrationInstructions",true);
+
+        if (showCallibrationInstructions) {
+            showDialog();
+        }
 
     }
 
@@ -97,12 +102,18 @@ public class HomeActivity extends AppCompatActivity {
                     ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(currentA, profileView, "profile");
                     startActivity(intent, options.toBundle());
-                    showCallibrationInstructions = false;
+                    getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                            .edit()
+                            .putBoolean("showCallibrationInstructions", false)
+                            .apply();
                 }
                 else {
                     getWindow().setExitTransition(new Explode());
                     startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(currentA).toBundle());
-                    showCallibrationInstructions = false;
+                    getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                            .edit()
+                            .putBoolean("showCallibrationInstructions", false)
+                            .apply();
                 }
                 //startActivity(intent);
             }
@@ -118,7 +129,10 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, settingsView, "settings");
                 startActivity(intent, options.toBundle());
-                showCallibrationInstructions = false;
+                getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                        .edit()
+                        .putBoolean("showCallibrationInstructions", false)
+                        .apply();
                 //startActivity(intent);
             }
         });
@@ -132,7 +146,10 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, startView, "start");
                 startActivity(intent, options.toBundle());
-                showCallibrationInstructions = false;
+                getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                        .edit()
+                        .putBoolean("showCallibrationInstructions", false)
+                        .apply();
                 //startActivity(intent);
             }
         });
@@ -146,7 +163,10 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, achievementsView, "achievements");
                 startActivity(intent, options.toBundle());
-                showCallibrationInstructions = false;
+                getSharedPreferences("callibrationInfo", MODE_PRIVATE)
+                        .edit()
+                        .putBoolean("showCallibrationInstructions", false)
+                        .apply();
                 //startActivity(intent);
             }
         });
@@ -217,14 +237,6 @@ public class HomeActivity extends AppCompatActivity {
         }
         if (achievementsButtonAnimatorSet != null) {
             achievementsButtonAnimatorSet.resume();
-        }
-        SharedPreferences preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
-
-        // Check if the dialog has already been shown
-        boolean isDialogShown = preferences.getBoolean("isDialogShown", false);
-
-        if (!isDialogShown) {
-            showDialog(); // Show the dialog if it hasn't been shown
         }
     }
 }
