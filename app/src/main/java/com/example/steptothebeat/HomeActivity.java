@@ -4,7 +4,9 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.ChangeImageTransform;
@@ -12,9 +14,11 @@ import android.transition.Explode;
 import android.transition.Scene;
 import android.transition.Transition;
 import android.transition.TransitionManager;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -26,6 +30,8 @@ public class HomeActivity extends AppCompatActivity {
     private ImageView profileButton;
     private AnimatorSet profileButtonAnimatorSet, settingsButtonAnimatorSet, startWorkoutButtonAnimatorSet, achievementsButtonAnimatorSet;
 
+    private boolean showCallibrationInstructions = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +39,31 @@ public class HomeActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
 
         init();
+
     }
+
+
+
+
+    private void showDialog() {
+        LayoutInflater inflater = getLayoutInflater();
+        View customView = inflater.inflate(R.layout.custom_alert_dialogue, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(customView);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        Button dismissButton = customView.findViewById(R.id.custom_button);
+        dismissButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+    }
+
 
     void init() {
         // Initialize the 4 buttons
@@ -67,10 +97,12 @@ public class HomeActivity extends AppCompatActivity {
                     ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(currentA, profileView, "profile");
                     startActivity(intent, options.toBundle());
+                    showCallibrationInstructions = false;
                 }
                 else {
                     getWindow().setExitTransition(new Explode());
                     startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(currentA).toBundle());
+                    showCallibrationInstructions = false;
                 }
                 //startActivity(intent);
             }
@@ -86,6 +118,7 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, settingsView, "settings");
                 startActivity(intent, options.toBundle());
+                showCallibrationInstructions = false;
                 //startActivity(intent);
             }
         });
@@ -99,6 +132,7 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, startView, "start");
                 startActivity(intent, options.toBundle());
+                showCallibrationInstructions = false;
                 //startActivity(intent);
             }
         });
@@ -112,6 +146,7 @@ public class HomeActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions
                         .makeSceneTransitionAnimation(currentA, achievementsView, "achievements");
                 startActivity(intent, options.toBundle());
+                showCallibrationInstructions = false;
                 //startActivity(intent);
             }
         });
@@ -182,6 +217,14 @@ public class HomeActivity extends AppCompatActivity {
         }
         if (achievementsButtonAnimatorSet != null) {
             achievementsButtonAnimatorSet.resume();
+        }
+        SharedPreferences preferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+
+        // Check if the dialog has already been shown
+        boolean isDialogShown = preferences.getBoolean("isDialogShown", false);
+
+        if (!isDialogShown) {
+            showDialog(); // Show the dialog if it hasn't been shown
         }
     }
 }
