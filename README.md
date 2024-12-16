@@ -16,8 +16,15 @@ You can also customize the category speeds by calibrating them to match the temp
 ### How to Run
 1. Boot up Android Studio Ladybug.
 2. Open the StepToTheBeat project.
-3. Ensure "Medium Phone API 35" is the selected device for the emulator. (Located at the top center of the Ladybug interface.)
-4. Run the app. (Green play button located at the top center of the Ladybug interface.)
+3. Ensure "Medium Phone API 35" is the selected device for the emulator (located at the top center of the Ladybug interface).
+4. Run the app (green play button located at the top center of the Ladybug interface).
+
+### Resources
+- https://developer.android.com/develop/ui/views/animations/transitions/start-activity
+- https://developer.spotify.com/documentation/android
+- https://developer.android.com/develop/ui/views/animations/overview
+- https://developer.android.com/develop/sensors-and-location/sensors/sensors_motion
+- https://community.gamedev.tv/t/accelerometer-in-android-studio-virtual-device/239502
 
 ### Attributions
 Menu Bar:
