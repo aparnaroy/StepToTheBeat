@@ -19,6 +19,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import android.content.SharedPreferences;
+import android.widget.Toast;
+
 import java.util.Random;
 
 
@@ -117,13 +119,17 @@ public class ActiveSessionActivity extends BaseActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("UserPreferences", MODE_PRIVATE);
         int walk_spm = sharedPreferences.getInt("walk_spm", -1);
         int run_spm = sharedPreferences.getInt("run_spm", -1);
+//        Toast.makeText(this, "Before if statement: ", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, pace + walk_spm + run_spm, Toast.LENGTH_SHORT).show();
 
         if ("Walk".equals(pace) && walk_spm != -1) {
+//            Toast.makeText(this, "The tempo: " + randomTempo, Toast.LENGTH_SHORT).show();
             tempoTextView.setText(walk_spm + " BPM");
         } else if ("Run".equals(pace) && run_spm != -1) {
             tempoTextView.setText(run_spm + " BPM");
         } else if ("Walk".equals(pace)) {
             randomTempo = random.nextInt(31) + 90;
+//            Toast.makeText(this, "The tempo: " + randomTempo, Toast.LENGTH_SHORT).show();
             tempoTextView.setText(randomTempo + " BPM");
         } else if ("Power Walk".equals(pace)) {
             randomTempo = random.nextInt(16) + 120;
