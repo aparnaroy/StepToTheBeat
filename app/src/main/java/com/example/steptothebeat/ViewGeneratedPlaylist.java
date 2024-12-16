@@ -114,16 +114,17 @@ public class ViewGeneratedPlaylist extends BaseActivity {
             } else if (genre.equals("Rap") && pace.equals("Sprint")) {
                 selectedPlaylistTextView.setText("170 BPM RAP");
             }
-        } else if (genre.equals("Dubstep") && pace.equals("Walk")) {
-            selectedPlaylistTextView.setText("100 bpm EDM");
-        } else if (genre.equals("Dubstep") && pace.equals("Power Walk")) {
-            selectedPlaylistTextView.setText("100 bpm EDM");
-        } else if (genre.equals("Dubstep") && pace.equals("Jog")) {
-            selectedPlaylistTextView.setText("edm 130 bpm");
-        } else if (genre.equals("Dubstep") && pace.equals("Run")) {
-            selectedPlaylistTextView.setText("170 BPM Running EDM Mix");
-        } else if (genre.equals("Dubstep") && pace.equals("Sprint")) {
-            selectedPlaylistTextView.setText("170 BPM Running EDM Mix");
+            else if (genre.equals("Dubstep") && pace.equals("Walk")) {
+                selectedPlaylistTextView.setText("100 bpm EDM");
+            } else if (genre.equals("Dubstep") && pace.equals("Power Walk")) {
+                selectedPlaylistTextView.setText("100 bpm EDM");
+            } else if (genre.equals("Dubstep") && pace.equals("Jog")) {
+                selectedPlaylistTextView.setText("edm 130 bpm");
+            } else if (genre.equals("Dubstep") && pace.equals("Run")) {
+                selectedPlaylistTextView.setText("170 BPM Running EDM Mix");
+            } else if (genre.equals("Dubstep") && pace.equals("Sprint")) {
+                selectedPlaylistTextView.setText("170 BPM Running EDM Mix");
+            }
         }
         else{
         // Default playlist if no match
@@ -206,7 +207,7 @@ public class ViewGeneratedPlaylist extends BaseActivity {
                                     intent.putExtra("track", track.name);
                                     intent.putExtra("artist", track.artist.name);
                                     intent.putExtra("playlist", playlistName);
-                                    intent.putExtra("selected_bpm", pace);
+                                    intent.putExtra("pace", pace);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
                                     // Set a new Runnable to be executed after 10 seconds
